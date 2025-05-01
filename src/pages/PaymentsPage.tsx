@@ -1,12 +1,8 @@
 
 import { useState } from "react";
-import { CreditCard, Download, Plus } from "lucide-react";
+import { CreditCard, Download, Plus, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import PaymentMethods from "@/components/dashboard/PaymentMethods";
 import TransactionHistory from "@/components/dashboard/TransactionHistory";
 import BillingDetails from "@/components/dashboard/BillingDetails";
@@ -29,11 +25,22 @@ const PaymentsPage = () => {
         onValueChange={setActiveTab}
         className="space-y-4"
       >
-        <TabsList>
-          <TabsTrigger value="payment-methods">Payment Methods</TabsTrigger>
-          <TabsTrigger value="transaction-history">Transaction History</TabsTrigger>
-          <TabsTrigger value="billing-details">Billing Details</TabsTrigger>
-        </TabsList>
+        <div className="bg-white rounded-lg p-1 shadow-sm border">
+          <TabsList className="w-full grid grid-cols-3">
+            <TabsTrigger className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground" value="payment-methods">
+              <CreditCard className="h-4 w-4 mr-2" />
+              Payment Methods
+            </TabsTrigger>
+            <TabsTrigger className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground" value="transaction-history">
+              <Wallet className="h-4 w-4 mr-2" />
+              Transaction History
+            </TabsTrigger>
+            <TabsTrigger className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground" value="billing-details">
+              <Download className="h-4 w-4 mr-2" />
+              Billing Details
+            </TabsTrigger>
+          </TabsList>
+        </div>
         
         <TabsContent value="payment-methods" className="space-y-4">
           <PaymentMethods />

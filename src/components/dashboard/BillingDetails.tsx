@@ -44,40 +44,42 @@ const BillingDetails = () => {
   };
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="overflow-hidden border">
+      <CardHeader className="bg-gray-50 border-b">
         <CardTitle>Billing Details</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-gray-600">
           Update your billing information used for invoices and receipts
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <CardContent className="pt-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="fullName">Full Name</Label>
+              <Label htmlFor="fullName" className="text-sm font-medium text-gray-700">Full Name</Label>
               <Input
                 id="fullName"
                 name="fullName"
                 value={billingInfo.fullName}
                 onChange={handleChange}
                 disabled={!isEditing}
+                className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="companyName">Company Name (Optional)</Label>
+              <Label htmlFor="companyName" className="text-sm font-medium text-gray-700">Company Name (Optional)</Label>
               <Input
                 id="companyName"
                 name="companyName"
                 value={billingInfo.companyName}
                 onChange={handleChange}
                 disabled={!isEditing}
+                className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address</Label>
+            <Label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</Label>
             <Input
               id="email"
               name="email"
@@ -85,61 +87,66 @@ const BillingDetails = () => {
               value={billingInfo.email}
               onChange={handleChange}
               disabled={!isEditing}
+              className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="address">Street Address</Label>
+            <Label htmlFor="address" className="text-sm font-medium text-gray-700">Street Address</Label>
             <Input
               id="address"
               name="address"
               value={billingInfo.address}
               onChange={handleChange}
               disabled={!isEditing}
+              className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             <div className="space-y-2">
-              <Label htmlFor="city">City</Label>
+              <Label htmlFor="city" className="text-sm font-medium text-gray-700">City</Label>
               <Input
                 id="city"
                 name="city"
                 value={billingInfo.city}
                 onChange={handleChange}
                 disabled={!isEditing}
+                className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="state">State / Province</Label>
+              <Label htmlFor="state" className="text-sm font-medium text-gray-700">State / Province</Label>
               <Input
                 id="state"
                 name="state"
                 value={billingInfo.state}
                 onChange={handleChange}
                 disabled={!isEditing}
+                className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="zipCode">ZIP / Postal Code</Label>
+              <Label htmlFor="zipCode" className="text-sm font-medium text-gray-700">ZIP / Postal Code</Label>
               <Input
                 id="zipCode"
                 name="zipCode"
                 value={billingInfo.zipCode}
                 onChange={handleChange}
                 disabled={!isEditing}
+                className={`border-input ${isEditing ? 'bg-white' : 'bg-gray-50'}`}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="country">Country</Label>
+            <Label htmlFor="country" className="text-sm font-medium text-gray-700">Country</Label>
             <Select
               disabled={!isEditing}
               value={billingInfo.country}
               onValueChange={(value) => handleSelectChange("country", value)}
             >
-              <SelectTrigger id="country">
+              <SelectTrigger id="country" className={`w-full ${isEditing ? 'bg-white' : 'bg-gray-50'} border-input`}>
                 <SelectValue placeholder="Select a country" />
               </SelectTrigger>
               <SelectContent>
@@ -154,20 +161,27 @@ const BillingDetails = () => {
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-between border-t py-4 bg-gray-50">
         {isEditing ? (
           <>
             <Button variant="outline" onClick={() => setIsEditing(false)}>
               Cancel
             </Button>
-            <Button type="submit" onClick={handleSubmit}>
+            <Button 
+              type="submit" 
+              onClick={handleSubmit}
+              className="bg-primary hover:bg-primary/90"
+            >
               Save Changes
             </Button>
           </>
         ) : (
           <>
             <div />
-            <Button onClick={() => setIsEditing(true)}>
+            <Button 
+              onClick={() => setIsEditing(true)}
+              className="bg-primary hover:bg-primary/90"
+            >
               Edit Details
             </Button>
           </>

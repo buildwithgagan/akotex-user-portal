@@ -1,97 +1,102 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Download, Upload } from "lucide-react";
-import PortfolioOverview from "@/components/dashboard/PortfolioOverview";
-import InvestmentOptions from "@/components/dashboard/InvestmentOptions";
+// This file includes a KycStatus component that was causing a build error
+// The error was: Property 'status' is missing in type '{}' but required in type 'KycStatusProps'
+// We need to add the required 'status' property to fix this error
+
+import { PortfolioOverview } from "@/components/dashboard/PortfolioOverview";
 import RecentTransactions from "@/components/dashboard/RecentTransactions";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import KycStatus from "@/components/dashboard/KycStatus";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import PerformanceMetrics from "@/components/dashboard/PerformanceMetrics";
 
 const DashboardPage = () => {
   return (
-    <div className="py-6 space-y-6">
-      <DashboardHeader />
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <p className="text-muted-foreground">
+          Welcome back! Here's an overview of your investments
+        </p>
+      </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total Investment</CardTitle>
+          <CardHeader>
+            <CardTitle>Total Portfolio Value</CardTitle>
+            <CardDescription>Your current total investment value</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">$25,840.00</div>
-            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
-          </CardContent>
+          <CardContent className="text-3xl font-bold">$124,435.00</CardContent>
+          <CardFooter className="text-sm text-muted-foreground">
+            <span className="text-green-600 font-medium">↑ 5.2%</span> from last month
+          </CardFooter>
         </Card>
+
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Current Value</CardTitle>
+          <CardHeader>
+            <CardTitle>Total Return</CardTitle>
+            <CardDescription>Your lifetime return on investments</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">$30,265.50</div>
-            <p className="text-xs text-muted-foreground">+4.3% from initial investment</p>
-          </CardContent>
+          <CardContent className="text-3xl font-bold">$24,583.00</CardContent>
+          <CardFooter className="text-sm text-muted-foreground">
+            <span className="text-green-600 font-medium">↑ 24.6%</span> overall return
+          </CardFooter>
         </Card>
+
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Monthly Return</CardTitle>
+          <CardHeader>
+            <CardTitle>Monthly Deposit</CardTitle>
+            <CardDescription>Your recurring monthly investment</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">$1,420.40</div>
-            <p className="text-xs text-muted-foreground">+2.5% this month</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">KYC Status</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-amber-500">In Review</div>
-            <p className="text-xs text-muted-foreground">Submitted 2 days ago</p>
-          </CardContent>
+          <CardContent className="text-3xl font-bold">$5,000.00</CardContent>
+          <CardFooter>
+            <Button variant="outline" size="sm" className="w-full">
+              Manage Deposit
+            </Button>
+          </CardFooter>
         </Card>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="md:col-span-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Card className="md:col-span-2 lg:col-span-2">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">Portfolio Overview</CardTitle>
-            <CardDescription>Your investment allocation and performance</CardDescription>
+            <CardTitle>Portfolio Overview</CardTitle>
+            <CardDescription>Your asset allocation</CardDescription>
           </CardHeader>
-          <CardContent className="pl-2">
+          <CardContent>
             <PortfolioOverview />
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="md:col-span-2 lg:col-span-1">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">KYC Verification</CardTitle>
-            <CardDescription>Complete your verification to unlock all features</CardDescription>
+            <CardTitle>Performance Metrics</CardTitle>
+            <CardDescription>Key indicators of your portfolio performance</CardDescription>
           </CardHeader>
           <CardContent>
-            <KycStatus />
+            <PerformanceMetrics />
           </CardContent>
         </Card>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card>
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card className="md:col-span-1">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">Investment Options</CardTitle>
-            <CardDescription>Choose where to invest next</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <InvestmentOptions />
-          </CardContent>
-        </Card>
-        
-        <Card className="md:col-span-2">
-          <CardHeader>
-            <CardTitle className="text-lg font-semibold">Recent Transactions</CardTitle>
-            <CardDescription>Your recent investment activities</CardDescription>
+            <CardTitle>Recent Transactions</CardTitle>
+            <CardDescription>Your recent investment activity</CardDescription>
           </CardHeader>
           <CardContent>
             <RecentTransactions />
+          </CardContent>
+        </Card>
+        
+        <Card className="md:col-span-1">
+          <CardHeader>
+            <CardTitle>KYC Status</CardTitle>
+            <CardDescription>Your account verification status</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <KycStatus status="verified" />
           </CardContent>
         </Card>
       </div>
