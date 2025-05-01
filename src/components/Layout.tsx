@@ -15,8 +15,8 @@ const Layout = ({ children }: LayoutProps) => {
 
   if (isDashboard) {
     return (
-      <SidebarProvider>
-        <div className="flex w-full min-h-screen bg-gray-50">
+      <SidebarProvider defaultOpen={true}>
+        <div className="flex w-full min-h-screen bg-gray-50 dark:bg-gray-900">
           <DashboardSidebar />
           <SidebarInset className="pt-6">
             <div className="container mx-auto px-4">

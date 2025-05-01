@@ -21,6 +21,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
+  SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 
@@ -72,8 +73,10 @@ const DashboardSidebar = () => {
             className="h-8 w-auto"
           />
         </Link>
-        <SidebarTrigger />
+        <SidebarTrigger className="text-muted-foreground hover:text-primary transition-colors" />
       </SidebarHeader>
+
+      <SidebarRail />
 
       <SidebarContent>
         <SidebarGroup>
