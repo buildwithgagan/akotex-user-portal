@@ -65,10 +65,10 @@ export default {
 				},
 				// Akotex specific colors
 				akotex: {
-					blue: '#002C5F', // Deep blue
-					gold: '#FFD700', // Gold accent
-					darkblue: '#001F43',
-					lightblue: '#2C5282',
+					red: '#EA384C', // Akotex red
+					black: '#1A1A1A', // Akotex black
+					darkred: '#C42A3C', // Darker version of red
+					lightgray: '#F5F5F5', // Light gray for backgrounds
 				}
 			},
 			borderRadius: {
