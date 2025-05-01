@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
@@ -15,7 +14,6 @@ const FooterSection = () => {
                 alt="Akotex Group Logo" 
                 className="h-8 w-auto mr-2"
               />
-              <span className="text-white text-xl font-bold">Wealth Compass</span>
             </div>
             <p className="text-gray-400 mb-6">
               Professional wealth management solutions for your financial growth and security.
