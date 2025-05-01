@@ -3,7 +3,7 @@
 // The error was: Property 'status' is missing in type '{}' but required in type 'KycStatusProps'
 // We need to add the required 'status' property to fix this error
 
-import { PortfolioOverview } from "@/components/dashboard/PortfolioOverview";
+import PortfolioOverview from "@/components/dashboard/PortfolioOverview";
 import RecentTransactions from "@/components/dashboard/RecentTransactions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
