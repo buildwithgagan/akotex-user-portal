@@ -1,61 +1,87 @@
 
-import { FileText, Upload, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Upload } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+
+type KycStatusType = "not_started" | "in_progress" | "in_review" | "verified" | "rejected";
 
 const KycStatus = () => {
-  // This is a mock status - in a real app, this would come from your backend
-  const status = "in_review"; // possible values: "not_started", "in_progress", "in_review", "verified", "rejected"
+  // For demo purposes - this would typically come from an API
+  const kycStatus: KycStatusType = "in_review";
+  
+  const getStatusColor = () => {
+    if (kycStatus === "verified") return "text-green-500";
+    else if (kycStatus === "rejected") return "text-red-500";
+    else return "text-amber-500";
+  };
+  
+  const getProgressValue = () => {
+    switch (kycStatus) {
+      case "not_started":
+        return 0;
+      case "in_progress":
+        return 40;
+      case "in_review":
+        return 80;
+      case "verified":
+        return 100;
+      case "rejected":
+        return 70;
+      default:
+        return 0;
+    }
+  };
   
   return (
     <div className="space-y-4">
-      <div className="flex items-start gap-4">
-        <div className={`rounded-full p-2 ${
-          status === "verified" 
-            ? "bg-green-100 text-green-600" 
-            : status === "rejected" 
-            ? "bg-red-100 text-red-600" 
-            : "bg-amber-100 text-amber-600"
-        }`}>
-          <FileText className="h-6 w-6" />
+      {(kycStatus === "not_started" || kycStatus === "rejected") && (
+        <div className="text-center">
+          <Button className="w-full" variant="outline">
+            <Upload className="mr-2 h-4 w-4" />
+            Start KYC Process
+          </Button>
         </div>
-        <div>
-          <h4 className="font-medium">KYC Verification</h4>
-          <p className="text-sm text-muted-foreground">
-            {status === "not_started" && "Start your verification process to unlock all features."}
-            {status === "in_progress" && "Continue your verification process."}
-            {status === "in_review" && "Your documents are being reviewed. This may take 1-2 business days."}
-            {status === "verified" && "Your identity has been verified. All features unlocked."}
-            {status === "rejected" && "Your verification was rejected. Please resubmit with valid documents."}
+      )}
+      
+      {kycStatus === "in_progress" && (
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground mb-2">Continue your verification</p>
+          <Button className="w-full">
+            Continue KYC
+          </Button>
+        </div>
+      )}
+      
+      {kycStatus === "verified" && (
+        <div className="text-center">
+          <p className="text-sm text-green-500 font-medium">
+            Your identity has been verified ✓
           </p>
         </div>
+      )}
+      
+      <div className="space-y-2">
+        <div className="flex justify-between text-sm">
+          <span>Verification Progress</span>
+          <span className={getStatusColor()}>{kycStatus.replace("_", " ").toUpperCase()}</span>
+        </div>
+        <Progress value={getProgressValue()} className="h-2" />
       </div>
-
-      {(status === "not_started" || status === "rejected") && (
-        <Button className="w-full gap-2">
-          <Upload className="h-4 w-4" />
-          Start Verification
-        </Button>
-      )}
-
-      {status === "in_progress" && (
-        <Button className="w-full gap-2">
-          <Upload className="h-4 w-4" />
-          Continue Verification
-        </Button>
-      )}
-
-      {status === "in_review" && (
-        <div className="bg-amber-50 text-amber-700 p-3 rounded-md text-sm">
-          Your documents are currently being reviewed by our team.
-        </div>
-      )}
-
-      {status === "verified" && (
-        <div className="bg-green-50 text-green-700 p-3 rounded-md text-sm flex items-center gap-2">
-          <Check className="h-4 w-4" />
-          Verification complete
-        </div>
-      )}
+      
+      <div className="space-y-1 text-sm">
+        <p className="text-muted-foreground">Required documents:</p>
+        <ul className="list-disc list-inside space-y-1 text-xs">
+          <li className={kycStatus !== "not_started" ? "text-green-500" : ""}>
+            Government-issued ID
+          </li>
+          <li className={["in_review", "verified"].includes(kycStatus as any) ? "text-green-500" : ""}>
+            Proof of address
+          </li>
+          <li className={kycStatus === "verified" ? "text-green-500" : ""}>
+            Selfie verification
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
