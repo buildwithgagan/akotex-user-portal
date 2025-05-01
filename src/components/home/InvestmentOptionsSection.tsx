@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { PieChart, Home, Calendar, Eye } from "lucide-react";
+import { PieChart, Home, Calendar } from "lucide-react";
 
 const InvestmentOptionsSection = () => {
   return (
@@ -37,17 +37,9 @@ const InvestmentOptionsSection = () => {
                 <span className="text-gray-500">Avg. Annual Return</span>
                 <span className="text-akotex-red font-semibold">8% - 12%</span>
               </div>
-              <div className="flex justify-between mt-4">
-                <Link to="/investments" className="inline-block text-akotex-red font-semibold hover:underline">
-                  Learn more →
-                </Link>
-                <Button asChild size="sm" variant="outline" className="gap-1 border-akotex-red text-akotex-red hover:bg-akotex-red/10">
-                  <Link to="/investments">
-                    <Eye size={16} />
-                    View
-                  </Link>
-                </Button>
-              </div>
+              <Link to="/investments" className="mt-6 inline-block text-akotex-red font-semibold hover:underline">
+                Learn more →
+              </Link>
             </div>
           </div>
           
@@ -68,17 +60,9 @@ const InvestmentOptionsSection = () => {
                 <span className="text-gray-500">Avg. Annual Return</span>
                 <span className="text-akotex-red font-semibold">7% - 10%</span>
               </div>
-              <div className="flex justify-between mt-4">
-                <Link to="/investments" className="inline-block text-akotex-red font-semibold hover:underline">
-                  Learn more →
-                </Link>
-                <Button asChild size="sm" variant="outline" className="gap-1 border-akotex-red text-akotex-red hover:bg-akotex-red/10">
-                  <Link to="/investments">
-                    <Eye size={16} />
-                    View
-                  </Link>
-                </Button>
-              </div>
+              <Link to="/investments" className="mt-6 inline-block text-akotex-red font-semibold hover:underline">
+                Learn more →
+              </Link>
             </div>
           </div>
           
@@ -99,17 +83,9 @@ const InvestmentOptionsSection = () => {
                 <span className="text-gray-500">Avg. Annual Return</span>
                 <span className="text-akotex-red font-semibold">15% - 25%</span>
               </div>
-              <div className="flex justify-between mt-4">
-                <Link to="/investments" className="inline-block text-akotex-red font-semibold hover:underline">
-                  Learn more →
-                </Link>
-                <Button asChild size="sm" variant="outline" className="gap-1 border-akotex-red text-akotex-red hover:bg-akotex-red/10">
-                  <Link to="/investments">
-                    <Eye size={16} />
-                    View
-                  </Link>
-                </Button>
-              </div>
+              <Link to="/investments" className="mt-6 inline-block text-akotex-red font-semibold hover:underline">
+                Learn more →
+              </Link>
             </div>
           </div>
         </div>
