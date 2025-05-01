@@ -69,7 +69,7 @@ const DashboardSidebar = () => {
           <img 
             src="/lovable-uploads/70753024-7e70-4502-981c-d3cc6d7218b7.png"
             alt="Akotex Group Logo"
-            className="h-8 w-auto"
+            className="h-12 w-auto" // Increased from h-8 to h-12
           />
         </Link>
       </SidebarHeader>
