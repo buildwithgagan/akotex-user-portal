@@ -1,11 +1,21 @@
 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, CreditCard, PieChart, Home, Calendar, TrendingUp, Wallet } from "lucide-react";
 import { Link } from "react-router-dom";
+import PaymentDialog from "@/components/dashboard/PaymentDialog";
 
 const InvestmentOptionsPage = () => {
+  const navigate = useNavigate();
+  const [selectedInvestment, setSelectedInvestment] = useState<{
+    name: string;
+    minInvestment: string;
+  } | null>(null);
+  const [paymentDialogOpen, setPaymentDialogOpen] = useState(false);
+
   const etfOptions = [
     {
       name: "Global Market ETF",
@@ -87,6 +97,15 @@ const InvestmentOptionsPage = () => {
     }
   ];
 
+  const handleInvestClick = (option: { name: string; minInvestment: string }) => {
+    setSelectedInvestment(option);
+    setPaymentDialogOpen(true);
+  };
+  
+  const handlePaymentSuccess = () => {
+    navigate('/dashboard/investments');
+  };
+
   const renderInvestmentCard = (option, index) => (
     <Card key={index} className="overflow-hidden border border-gray-100 hover:shadow-md transition-all">
       <CardHeader className="pb-2">
@@ -127,11 +146,12 @@ const InvestmentOptionsPage = () => {
         </div>
       </CardContent>
       <CardFooter className="border-t bg-gray-50 pt-4">
-        <Button asChild className="w-full bg-akotex-red hover:bg-akotex-darkred">
-          <Link to="/dashboard/investments">
-            <CreditCard className="mr-2 h-4 w-4" /> 
-            Invest Now
-          </Link>
+        <Button 
+          className="w-full bg-akotex-red hover:bg-akotex-darkred"
+          onClick={() => handleInvestClick(option)}
+        >
+          <CreditCard className="mr-2 h-4 w-4" /> 
+          Invest Now
         </Button>
       </CardFooter>
     </Card>
@@ -254,6 +274,16 @@ const InvestmentOptionsPage = () => {
           </div>
         </div>
       </div>
+      
+      {selectedInvestment && (
+        <PaymentDialog
+          open={paymentDialogOpen}
+          onOpenChange={setPaymentDialogOpen}
+          investmentName={selectedInvestment.name}
+          minInvestment={selectedInvestment.minInvestment}
+          onSuccess={handlePaymentSuccess}
+        />
+      )}
     </div>
   );
 };
