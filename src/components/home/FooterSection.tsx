@@ -49,7 +49,7 @@ const FooterSection = () => {
             <h4 className="text-white font-bold text-lg mb-6">Legal</h4>
             <ul className="space-y-3">
               <li><Link to="/terms" className="hover:text-akotex-red transition-colors">Terms of Service</Link></li>
-              <li><a href="#" className="hover:text-akotex-red transition-colors">Privacy Policy</a></li>
+              <li><Link to="/privacy" className="hover:text-akotex-red transition-colors">Privacy Policy</Link></li>
               <li><a href="#" className="hover:text-akotex-red transition-colors">Compliance</a></li>
               <li><a href="#" className="hover:text-akotex-red transition-colors">Security</a></li>
             </ul>
@@ -77,7 +77,7 @@ const FooterSection = () => {
           <p>&copy; {new Date().getFullYear()} Akotex Investment LLC. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/terms" className="hover:text-akotex-red transition-colors">Terms</Link>
-            <a href="#" className="hover:text-akotex-red transition-colors">Privacy</a>
+            <Link to="/privacy" className="hover:text-akotex-red transition-colors">Privacy</Link>
             <a href="#" className="hover:text-akotex-red transition-colors">Cookies</a>
           </div>
         </div>
