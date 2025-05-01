@@ -17,6 +17,7 @@ import PaymentsPage from "./pages/PaymentsPage";
 import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
 import NotificationsPage from "./pages/NotificationsPage";
+import InvestmentOptionsPage from "./pages/InvestmentOptionsPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/investments" element={<Layout><InvestmentOptionsPage /></Layout>} />
             <Route path="/dashboard" element={<Layout><DashboardPage /></Layout>} />
             <Route path="/dashboard/investments" element={<Layout><InvestmentPage /></Layout>} />
             <Route path="/dashboard/performance" element={<Layout><PerformancePage /></Layout>} />
