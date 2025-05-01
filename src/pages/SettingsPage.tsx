@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +9,13 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Bell, Lock, User, CreditCard, Globe, Moon, Sun } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/context/ThemeContext";
 
 const SettingsPage = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const { theme } = useTheme();
 
   const handleSave = () => {
     setIsLoading(true);
@@ -300,16 +302,11 @@ const SettingsPage = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-medium">Theme</p>
-                  <p className="text-sm text-muted-foreground">Select your preferred theme</p>
+                  <p className="text-sm text-muted-foreground">
+                    Current theme: {theme === "dark" ? "Dark" : "Light"}
+                  </p>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="icon">
-                    <Sun className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="icon">
-                    <Moon className="h-4 w-4" />
-                  </Button>
-                </div>
+                <ThemeToggle />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
