@@ -50,8 +50,8 @@ const FooterSection = () => {
             <ul className="space-y-3">
               <li><Link to="/terms" className="hover:text-akotex-red transition-colors">Terms of Service</Link></li>
               <li><Link to="/privacy" className="hover:text-akotex-red transition-colors">Privacy Policy</Link></li>
-              <li><a href="#" className="hover:text-akotex-red transition-colors">Compliance</a></li>
-              <li><a href="#" className="hover:text-akotex-red transition-colors">Security</a></li>
+              <li><Link to="/compliance" className="hover:text-akotex-red transition-colors">Compliance</Link></li>
+              <li><Link to="/security" className="hover:text-akotex-red transition-colors">Security</Link></li>
             </ul>
           </div>
           
@@ -78,7 +78,8 @@ const FooterSection = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/terms" className="hover:text-akotex-red transition-colors">Terms</Link>
             <Link to="/privacy" className="hover:text-akotex-red transition-colors">Privacy</Link>
-            <a href="#" className="hover:text-akotex-red transition-colors">Cookies</a>
+            <Link to="/compliance" className="hover:text-akotex-red transition-colors">Compliance</Link>
+            <Link to="/security" className="hover:text-akotex-red transition-colors">Security</Link>
           </div>
         </div>
       </div>
