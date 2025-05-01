@@ -10,9 +10,14 @@ const KycStatus = () => {
   const kycStatus: KycStatusType = "in_review";
   
   const getStatusColor = () => {
-    if (kycStatus === "verified") return "text-green-500";
-    else if (kycStatus === "rejected") return "text-red-500";
-    else return "text-amber-500";
+    switch(kycStatus) {
+      case "verified":
+        return "text-green-500";
+      case "rejected":
+        return "text-red-500";
+      default:
+        return "text-amber-500";
+    }
   };
   
   const getProgressValue = () => {
@@ -74,7 +79,7 @@ const KycStatus = () => {
           <li className={kycStatus !== "not_started" ? "text-green-500" : ""}>
             Government-issued ID
           </li>
-          <li className={["in_review", "verified"].includes(kycStatus as any) ? "text-green-500" : ""}>
+          <li className={["in_review", "verified"].includes(kycStatus) ? "text-green-500" : ""}>
             Proof of address
           </li>
           <li className={kycStatus === "verified" ? "text-green-500" : ""}>
