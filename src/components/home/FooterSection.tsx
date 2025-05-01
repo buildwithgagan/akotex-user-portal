@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
@@ -47,7 +48,7 @@ const FooterSection = () => {
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Legal</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-akotex-red transition-colors">Terms of Service</a></li>
+              <li><Link to="/terms" className="hover:text-akotex-red transition-colors">Terms of Service</Link></li>
               <li><a href="#" className="hover:text-akotex-red transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-akotex-red transition-colors">Compliance</a></li>
               <li><a href="#" className="hover:text-akotex-red transition-colors">Security</a></li>
@@ -75,7 +76,7 @@ const FooterSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-sm">
           <p>&copy; {new Date().getFullYear()} Akotex Investment LLC. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-akotex-red transition-colors">Terms</a>
+            <Link to="/terms" className="hover:text-akotex-red transition-colors">Terms</Link>
             <a href="#" className="hover:text-akotex-red transition-colors">Privacy</a>
             <a href="#" className="hover:text-akotex-red transition-colors">Cookies</a>
           </div>

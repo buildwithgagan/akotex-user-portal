@@ -18,6 +18,7 @@ import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
 import NotificationsPage from "./pages/NotificationsPage";
 import InvestmentOptionsPage from "./pages/InvestmentOptionsPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/investments" element={<Layout><InvestmentOptionsPage /></Layout>} />
             <Route path="/performance" element={<Layout><PerformancePage /></Layout>} />
+            <Route path="/terms" element={<Layout><TermsOfServicePage /></Layout>} />
             <Route path="/dashboard" element={<Layout><DashboardPage /></Layout>} />
             <Route path="/dashboard/investments" element={<Layout><InvestmentPage /></Layout>} />
             <Route path="/dashboard/performance" element={<Layout><PerformancePage /></Layout>} />

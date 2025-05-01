@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import DashboardSidebar from "./dashboard/DashboardSidebar";
+import FooterSection from "./home/FooterSection";
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,6 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1">
         {children}
       </main>
+      <FooterSection />
     </div>
   );
 };
