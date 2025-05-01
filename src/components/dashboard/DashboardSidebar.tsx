@@ -7,7 +7,8 @@ import {
   LayoutDashboard,
   Settings,
   CreditCard,
-  Bell
+  Bell,
+  LogOut
 } from "lucide-react";
 import {
   Sidebar,
@@ -23,6 +24,17 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const DashboardSidebar = () => {
   const location = useLocation();
@@ -129,9 +141,28 @@ const DashboardSidebar = () => {
           <div className="text-xs text-muted-foreground">
             Logged in as <span className="font-semibold">John Doe</span>
           </div>
-          <Button variant="outline" size="sm" asChild>
-            <Link to="/login">Logout</Link>
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline" size="sm" className="flex items-center gap-1">
+                <LogOut size={16} />
+                Logout
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you sure you want to logout?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  You will need to login again to access your account.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction asChild>
+                  <Link to="/login">Logout</Link>
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </SidebarFooter>
     </Sidebar>
