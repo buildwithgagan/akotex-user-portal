@@ -1,9 +1,13 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { InfoIcon, TrendingUp, ChartPieIcon } from "lucide-react";
 import MonthlyPerformanceChart from "@/components/dashboard/MonthlyPerformanceChart";
 import PerformanceMetrics from "@/components/dashboard/PerformanceMetrics";
 import PerformanceBreakdown from "@/components/dashboard/PerformanceBreakdown";
+import AssetClassPerformance from "@/components/dashboard/AssetClassPerformance";
+import InvestmentRecommendations from "@/components/dashboard/InvestmentRecommendations";
 
 const PerformancePage = () => {
   return (
@@ -46,6 +50,14 @@ const PerformancePage = () => {
         </Card>
       </div>
 
+      <Alert className="bg-akotex-red bg-opacity-5 border-akotex-red">
+        <InfoIcon className="h-4 w-4 text-akotex-red" />
+        <AlertTitle className="text-akotex-red font-medium">Investment Insight</AlertTitle>
+        <AlertDescription className="text-sm">
+          Based on current market trends and historical data, ETFs and Real Estate are showing strong performance over the last year. Consider increasing allocation to these asset classes based on your risk profile.
+        </AlertDescription>
+      </Alert>
+
       <Tabs defaultValue="monthly" className="space-y-4">
         <TabsList>
           <TabsTrigger value="monthly">Monthly</TabsTrigger>
@@ -70,7 +82,7 @@ const PerformancePage = () => {
               <CardDescription>Your portfolio performance over the past quarters</CardDescription>
             </CardHeader>
             <CardContent className="h-96">
-              <MonthlyPerformanceChart />
+              <MonthlyPerformanceChart isQuarterly={true} />
             </CardContent>
           </Card>
         </TabsContent>
@@ -81,7 +93,7 @@ const PerformancePage = () => {
               <CardDescription>Your portfolio performance over the past years</CardDescription>
             </CardHeader>
             <CardContent className="h-96">
-              <MonthlyPerformanceChart />
+              <MonthlyPerformanceChart isYearly={true} />
             </CardContent>
           </Card>
         </TabsContent>
@@ -107,6 +119,32 @@ const PerformancePage = () => {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <div>
+            <CardTitle className="text-lg font-semibold">Asset Class Performance</CardTitle>
+            <CardDescription>Performance comparison across different time periods</CardDescription>
+          </div>
+          <TrendingUp className="h-5 w-5 text-akotex-red" />
+        </CardHeader>
+        <CardContent className="pt-4">
+          <AssetClassPerformance />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <div>
+            <CardTitle className="text-lg font-semibold">Where to Invest?</CardTitle>
+            <CardDescription>Strategic investment recommendations based on market analysis</CardDescription>
+          </div>
+          <ChartPieIcon className="h-5 w-5 text-akotex-red" />
+        </CardHeader>
+        <CardContent className="pt-4">
+          <InvestmentRecommendations />
+        </CardContent>
+      </Card>
     </div>
   );
 };
