@@ -1,5 +1,5 @@
 
-import { toast as sonnerToast } from "sonner";
+import { toast as sonnerToast, type Toast as SonnerToast } from "sonner";
 
 type ToastProps = {
   title?: string;
@@ -8,20 +8,27 @@ type ToastProps = {
   variant?: "default" | "destructive" | "success";
 };
 
-export function toast({ title, description, action, variant = "default" }: ToastProps) {
-  const variantToTypeMap = {
-    default: undefined,
-    destructive: "error",
-    success: "success",
+// Create a proper useToast hook that returns both toast function and toasts array
+export function useToast() {
+  return {
+    toast: ({ title, description, action, variant = "default" }: ToastProps) => {
+      // Map our variant to sonner's type
+      let sonnerType: undefined | "success" | "error" | "warning" | "info";
+      
+      if (variant === "destructive") {
+        sonnerType = "error";
+      } else if (variant === "success") {
+        sonnerType = "success";
+      }
+      
+      return sonnerToast(title, {
+        description,
+        action,
+        // Only include type if it's defined
+        ...(sonnerType ? { type: sonnerType } : {})
+      });
+    }
   };
-
-  return sonnerToast(title, {
-    description,
-    action,
-    type: variantToTypeMap[variant],
-  });
 }
 
-export const useToast = () => {
-  return { toast };
-};
+export { sonnerToast as toast };
