@@ -38,7 +38,11 @@ const WhyChooseUsSection = () => {
             
             <div className="grid gap-5">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4">
+                <div 
+                  key={index} 
+                  className="flex items-start gap-4 transition-all duration-300 hover:translate-x-2"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div className="bg-akotex-red rounded-full p-2 mt-1 flex-shrink-0">
                     <Check className="h-4 w-4 text-white" />
                   </div>
@@ -56,7 +60,7 @@ const WhyChooseUsSection = () => {
             <img 
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
               alt="Wealth management" 
-              className="relative z-10 rounded-2xl shadow-lg object-cover w-full h-full max-h-[500px]"
+              className="relative z-10 rounded-2xl shadow-lg object-cover w-full h-full max-h-[500px] transition-transform duration-700 hover:scale-[1.02]"
             />
           </div>
         </div>

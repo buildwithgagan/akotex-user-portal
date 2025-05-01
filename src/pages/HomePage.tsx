@@ -11,13 +11,27 @@ import FooterSection from "@/components/home/FooterSection";
 const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <HeroSection />
-      <StatisticsSection />
-      <InvestmentOptionsSection />
-      <WhyChooseUsSection />
-      <TestimonialsSection />
-      <CtaSection />
-      <CustomPortfolioSection />
+      <div className="animate-fade-in">
+        <HeroSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
+        <StatisticsSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
+        <InvestmentOptionsSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "300ms" }}>
+        <WhyChooseUsSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "400ms" }}>
+        <TestimonialsSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "500ms" }}>
+        <CtaSection />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: "600ms" }}>
+        <CustomPortfolioSection />
+      </div>
       <FooterSection />
     </div>
   );
