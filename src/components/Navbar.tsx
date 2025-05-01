@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-gray-200 fixed w-full z-50">
+    <nav className="bg-white shadow-sm border-b border-gray-100 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -19,12 +19,13 @@ const Navbar = () => {
                   alt="Akotex Group Logo" 
                   className="h-8 w-auto"
                 />
+                <span className="ml-2 font-bold text-xl text-akotex-black">Wealth Compass</span>
               </Link>
             </div>
           </div>
           
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             <Link to="/" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-sm font-medium">
               Home
             </Link>
