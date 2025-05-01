@@ -19,7 +19,6 @@ const Navbar = () => {
                   alt="Akotex Group Logo" 
                   className="h-8 w-auto"
                 />
-                <span className="ml-2 font-bold text-xl text-akotex-black">Wealth Compass</span>
               </Link>
             </div>
           </div>
