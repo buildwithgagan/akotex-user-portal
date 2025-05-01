@@ -7,7 +7,8 @@ import {
   LayoutDashboard,
   Settings,
   CreditCard,
-  Bell
+  Bell,
+  ChevronLeft
 } from "lucide-react";
 import {
   Sidebar,
@@ -65,7 +66,7 @@ const DashboardSidebar = () => {
 
   return (
     <Sidebar>
-      <SidebarHeader className="flex items-center justify-between border-b px-4 py-2">
+      <SidebarHeader className="flex items-center border-b px-4 py-2">
         <Link to="/" className="flex items-center gap-2">
           <img 
             src="/lovable-uploads/70753024-7e70-4502-981c-d3cc6d7218b7.png"
@@ -73,12 +74,17 @@ const DashboardSidebar = () => {
             className="h-8 w-auto"
           />
         </Link>
-        <SidebarTrigger className="text-muted-foreground hover:text-primary transition-colors" />
       </SidebarHeader>
 
       <SidebarRail />
 
       <SidebarContent>
+        <div className="flex items-center justify-end px-2 py-2">
+          <SidebarTrigger className="text-muted-foreground hover:text-primary transition-colors">
+            <ChevronLeft size={18} />
+          </SidebarTrigger>
+        </div>
+        
         <SidebarGroup>
           <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
           <SidebarGroupContent>
