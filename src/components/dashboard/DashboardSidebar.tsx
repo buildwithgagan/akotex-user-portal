@@ -7,8 +7,7 @@ import {
   LayoutDashboard,
   Settings,
   CreditCard,
-  Bell,
-  ChevronLeft
+  Bell
 } from "lucide-react";
 import {
   Sidebar,
@@ -21,7 +20,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarTrigger,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
@@ -78,13 +76,7 @@ const DashboardSidebar = () => {
 
       <SidebarRail />
 
-      <SidebarContent>
-        <div className="flex items-center justify-end px-2 py-2">
-          <SidebarTrigger className="text-muted-foreground hover:text-primary transition-colors">
-            <ChevronLeft size={18} />
-          </SidebarTrigger>
-        </div>
-        
+      <SidebarContent>        
         <SidebarGroup>
           <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
           <SidebarGroupContent>
