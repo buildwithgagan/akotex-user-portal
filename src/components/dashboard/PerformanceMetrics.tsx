@@ -22,8 +22,7 @@ const PerformanceMetrics = () => {
           </div>
           <Progress 
             value={(metric.value / metric.target) * 100} 
-            className="h-2" 
-            indicatorClassName={metric.color}
+            className={`h-2 ${metric.color}`}
           />
           <div className="flex justify-between text-xs text-muted-foreground mt-1">
             <span>0</span>
