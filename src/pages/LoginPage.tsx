@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -20,6 +20,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -32,9 +33,16 @@ const LoginPage = () => {
   const onSubmit = (data: LoginFormValues) => {
     // This is where you would handle the login logic
     console.log(data);
-    toast.success("Login attempt received", {
-      description: "This is a demo. Authentication will be implemented later.",
+    
+    // For now, we'll simulate a successful login
+    toast.success("Login successful", {
+      description: "Welcome back to your dashboard!",
     });
+    
+    // Redirect to the dashboard page after a short delay
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1000);
   };
 
   return (
