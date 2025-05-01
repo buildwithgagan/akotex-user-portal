@@ -21,7 +21,7 @@ const CtaSection = () => {
             <Button asChild size="lg" className="bg-akotex-red hover:bg-akotex-darkred text-white font-bold text-lg py-6">
               <Link to="/signup">Create Your Account</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:bg-opacity-10 text-lg py-6">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 bg-white/10 text-lg py-6">
               <Link to="/login">Login to Your Account</Link>
             </Button>
           </div>
