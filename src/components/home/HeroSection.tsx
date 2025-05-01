@@ -30,7 +30,7 @@ const HeroSection = () => {
                   Start Investing Now <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:bg-opacity-10">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 bg-white/10">
                 <Link to="/investments">
                   Explore Investment Options
                 </Link>
