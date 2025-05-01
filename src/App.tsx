@@ -16,6 +16,7 @@ import PerformancePage from "./pages/PerformancePage";
 import PaymentsPage from "./pages/PaymentsPage";
 import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
+import NotificationsPage from "./pages/NotificationsPage";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/dashboard/payments" element={<Layout><PaymentsPage /></Layout>} />
             <Route path="/dashboard/documents" element={<Layout><DocumentsPage /></Layout>} />
             <Route path="/dashboard/settings" element={<Layout><SettingsPage /></Layout>} />
+            <Route path="/dashboard/notifications" element={<Layout><NotificationsPage /></Layout>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Layout><NotFound /></Layout>} />
           </Routes>
