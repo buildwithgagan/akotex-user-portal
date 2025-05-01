@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import DashboardSidebar from "./dashboard/DashboardSidebar";
+import FooterSection from "./home/FooterSection";
 
 interface LayoutProps {
   children: ReactNode;
@@ -32,8 +33,11 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        {children}
+        <div className="container mx-auto px-4">
+          {children}
+        </div>
       </main>
+      <FooterSection />
     </div>
   );
 };
