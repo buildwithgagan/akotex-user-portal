@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 bg-gradient-to-br from-akotex-blue via-akotex-darkblue to-akotex-blue text-white">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 bg-gradient-to-br from-akotex-black via-black to-akotex-black text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="animate-fade-in">
@@ -19,7 +19,7 @@ const HomePage = () => {
                 Access professionally managed investments and secure your financial future with Akotex Wealth Compass.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-akotex-gold hover:bg-yellow-400 text-akotex-blue font-bold">
+                <Button size="lg" className="bg-akotex-red hover:bg-akotex-darkred text-white font-bold">
                   <Link to="/signup" className="flex items-center">
                     Start Investing Now <ChevronRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -33,35 +33,35 @@ const HomePage = () => {
             </div>
             <div className="hidden md:block">
               <div className="relative">
-                <div className="absolute inset-0 bg-akotex-gold rounded-full opacity-20 blur-2xl"></div>
+                <div className="absolute inset-0 bg-akotex-red rounded-full opacity-20 blur-2xl"></div>
                 <div className="relative bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm border border-white border-opacity-20">
                   <h3 className="text-2xl font-semibold mb-4">Investment Performance</h3>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
                         <span>Indices & ETFs</span>
-                        <span className="font-semibold text-akotex-gold">+12.4%</span>
+                        <span className="font-semibold text-akotex-red">+12.4%</span>
                       </div>
                       <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
-                        <div className="bg-akotex-gold h-2 rounded-full" style={{ width: "75%" }}></div>
+                        <div className="bg-akotex-red h-2 rounded-full" style={{ width: "75%" }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between mb-2">
                         <span>Real Estate</span>
-                        <span className="font-semibold text-akotex-gold">+8.7%</span>
+                        <span className="font-semibold text-akotex-red">+8.7%</span>
                       </div>
                       <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
-                        <div className="bg-akotex-gold h-2 rounded-full" style={{ width: "65%" }}></div>
+                        <div className="bg-akotex-red h-2 rounded-full" style={{ width: "65%" }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between mb-2">
                         <span>Crypto</span>
-                        <span className="font-semibold text-akotex-gold">+21.3%</span>
+                        <span className="font-semibold text-akotex-red">+21.3%</span>
                       </div>
                       <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
-                        <div className="bg-akotex-gold h-2 rounded-full" style={{ width: "85%" }}></div>
+                        <div className="bg-akotex-red h-2 rounded-full" style={{ width: "85%" }}></div>
                       </div>
                     </div>
                   </div>
@@ -82,10 +82,10 @@ const HomePage = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-blue">
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-red">
               <CardContent className="pt-6">
-                <div className="mb-4 bg-akotex-blue bg-opacity-10 p-3 rounded-full w-fit">
-                  <PieChart className="h-6 w-6 text-akotex-blue" />
+                <div className="mb-4 bg-akotex-red bg-opacity-10 p-3 rounded-full w-fit">
+                  <PieChart className="h-6 w-6 text-akotex-red" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Indices & ETFs</h3>
                 <p className="text-gray-600 mb-4">
@@ -93,14 +93,14 @@ const HomePage = () => {
                 </p>
                 <div className="flex justify-between text-sm font-medium">
                   <span className="text-gray-500">Avg. Annual Return</span>
-                  <span className="text-akotex-blue">8% - 12%</span>
+                  <span className="text-akotex-red">8% - 12%</span>
                 </div>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-blue">
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-red">
               <CardContent className="pt-6">
-                <div className="mb-4 bg-akotex-blue bg-opacity-10 p-3 rounded-full w-fit">
-                  <Home className="h-6 w-6 text-akotex-blue" />
+                <div className="mb-4 bg-akotex-red bg-opacity-10 p-3 rounded-full w-fit">
+                  <Home className="h-6 w-6 text-akotex-red" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Real Estate</h3>
                 <p className="text-gray-600 mb-4">
@@ -108,14 +108,14 @@ const HomePage = () => {
                 </p>
                 <div className="flex justify-between text-sm font-medium">
                   <span className="text-gray-500">Avg. Annual Return</span>
-                  <span className="text-akotex-blue">7% - 10%</span>
+                  <span className="text-akotex-red">7% - 10%</span>
                 </div>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-blue">
+            <Card className="hover:shadow-lg transition-shadow border-t-4 border-t-akotex-red">
               <CardContent className="pt-6">
-                <div className="mb-4 bg-akotex-blue bg-opacity-10 p-3 rounded-full w-fit">
-                  <Calendar className="h-6 w-6 text-akotex-blue" />
+                <div className="mb-4 bg-akotex-red bg-opacity-10 p-3 rounded-full w-fit">
+                  <Calendar className="h-6 w-6 text-akotex-red" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Crypto Assets</h3>
                 <p className="text-gray-600 mb-4">
@@ -123,13 +123,13 @@ const HomePage = () => {
                 </p>
                 <div className="flex justify-between text-sm font-medium">
                   <span className="text-gray-500">Avg. Annual Return</span>
-                  <span className="text-akotex-blue">15% - 25%</span>
+                  <span className="text-akotex-red">15% - 25%</span>
                 </div>
               </CardContent>
             </Card>
           </div>
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-akotex-blue hover:bg-akotex-darkblue">
+            <Button asChild size="lg" className="bg-akotex-red hover:bg-akotex-darkred">
               <Link to="/investments">View All Investment Options</Link>
             </Button>
           </div>
@@ -165,7 +165,7 @@ const HomePage = () => {
               },
             ].map((feature, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold mb-3 text-akotex-blue">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-akotex-red">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -174,7 +174,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-akotex-blue text-white">
+      <section className="py-16 px-4 bg-akotex-black text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Investment Journey?</h2>
@@ -182,7 +182,7 @@ const HomePage = () => {
               Join thousands of investors who have chosen Akotex Wealth Compass to secure their financial future.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="bg-akotex-gold hover:bg-yellow-400 text-akotex-blue font-bold">
+              <Button asChild size="lg" className="bg-akotex-red hover:bg-akotex-darkred text-white font-bold">
                 <Link to="/signup">Create Your Account</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:bg-opacity-10">
@@ -194,7 +194,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 px-4">
+      <footer className="bg-akotex-black text-gray-300 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -206,19 +206,19 @@ const HomePage = () => {
             <div>
               <h4 className="text-white font-medium mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><Link to="/" className="hover:text-akotex-gold">Home</Link></li>
-                <li><Link to="/investments" className="hover:text-akotex-gold">Investments</Link></li>
-                <li><Link to="/performance" className="hover:text-akotex-gold">Performance</Link></li>
-                <li><Link to="/signup" className="hover:text-akotex-gold">Sign Up</Link></li>
+                <li><Link to="/" className="hover:text-akotex-red">Home</Link></li>
+                <li><Link to="/investments" className="hover:text-akotex-red">Investments</Link></li>
+                <li><Link to="/performance" className="hover:text-akotex-red">Performance</Link></li>
+                <li><Link to="/signup" className="hover:text-akotex-red">Sign Up</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-medium mb-4">Legal</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-akotex-gold">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-akotex-gold">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-akotex-gold">Compliance</a></li>
-                <li><a href="#" className="hover:text-akotex-gold">Security</a></li>
+                <li><a href="#" className="hover:text-akotex-red">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-akotex-red">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-akotex-red">Compliance</a></li>
+                <li><a href="#" className="hover:text-akotex-red">Security</a></li>
               </ul>
             </div>
             <div>
