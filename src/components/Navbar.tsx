@@ -17,7 +17,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/70753024-7e70-4502-981c-d3cc6d7218b7.png" 
                   alt="Akotex Group Logo" 
-                  className="h-8 w-auto"
+                  className="h-10 w-auto" // Changed from h-8 to h-10 to make the logo bigger
                 />
               </Link>
             </div>
