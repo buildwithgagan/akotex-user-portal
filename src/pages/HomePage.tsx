@@ -5,6 +5,7 @@ import InvestmentOptionsSection from "@/components/home/InvestmentOptionsSection
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CtaSection from "@/components/home/CtaSection";
+import CustomPortfolioSection from "@/components/home/CustomPortfolioSection";
 import FooterSection from "@/components/home/FooterSection";
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
       <WhyChooseUsSection />
       <TestimonialsSection />
       <CtaSection />
+      <CustomPortfolioSection />
       <FooterSection />
     </div>
   );
