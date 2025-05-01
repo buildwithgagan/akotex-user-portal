@@ -25,25 +25,6 @@ const CtaSection = () => {
               <Link to="/login">Login to Your Account</Link>
             </Button>
           </div>
-          
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-akotex-red mb-2">$100M+</p>
-              <p className="text-gray-400">Assets Under Management</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-akotex-red mb-2">10,000+</p>
-              <p className="text-gray-400">Happy Investors</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-akotex-red mb-2">12.5%</p>
-              <p className="text-gray-400">Avg. Annual Return</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-akotex-red mb-2">24/7</p>
-              <p className="text-gray-400">Customer Support</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
