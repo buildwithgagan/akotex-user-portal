@@ -1,75 +1,96 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { Apple, ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative py-24 md:py-32 px-4 overflow-hidden bg-akotex-black text-white">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-akotex-red opacity-10 blur-[100px] rounded-full"></div>
-        <div className="absolute -bottom-[20%] -left-[10%] w-[35%] h-[40%] bg-akotex-red opacity-10 blur-[100px] rounded-full"></div>
-      </div>
+    <section className="relative py-12 md:py-20 px-4 overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-100 dark:from-akotex-black dark:to-gray-900 -z-10"></div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm mb-6">
-              <span className="text-sm font-medium">Investment made simple</span>
+      {/* Light Effect */}
+      <div className="absolute right-0 bottom-0 w-[80%] h-[70%] bg-akotex-red/5 blur-[120px] rounded-full -z-10"></div>
+      
+      <div className="max-w-7xl mx-auto">
+        {/* Announcement Banner */}
+        <div className="max-w-3xl mx-auto mb-6">
+          <div className="bg-akotex-black/5 dark:bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 flex items-center justify-center text-sm text-center">
+            <span className="flex items-center gap-2">
+              Our highest yielding opportunity is live now! 
+              <Link to="/investments" className="text-akotex-red font-medium hover:underline">
+                Invest now
+              </Link>
+            </span>
+          </div>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Content Column */}
+          <div className="order-2 md:order-1 text-center md:text-left">
+            {/* Performance Badge */}
+            <div className="inline-flex items-center bg-white dark:bg-white/10 rounded-full px-4 py-1.5 mb-6 shadow-sm border border-gray-100 dark:border-white/10">
+              <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
+              <span className="text-sm font-medium">10.1% average investor returns in 2024</span>
             </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Grow Your Wealth with Confidence
+              Build your wealth through <span className="text-akotex-red">real estate</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-lg">
-              Access professionally managed investments and secure your financial future with Akotex Wealth Compass.
+            
+            <p className="text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-xl">
+              Thousands of investors all over the world are using Akotex to access income generating real estate deals in high growth markets, from only $500
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-akotex-red hover:bg-akotex-darkred text-white font-bold">
-                <Link to="/signup" className="flex items-center">
-                  Start Investing Now <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 bg-white/10">
-                <Link to="/investments">
-                  Explore Investment Options
-                </Link>
-              </Button>
+            
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <a href="#download" className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg">
+                <Apple size={24} className="mr-2" />
+                <div className="flex flex-col items-start">
+                  <span className="text-xs">Download on the</span>
+                  <span className="text-sm font-semibold">App Store</span>
+                </div>
+              </a>
+              
+              <a href="#download" className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg">
+                <svg width="24" height="24" viewBox="0 0 24 24" className="mr-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 3.5l14 8.5-14 8.5z" fill="currentColor"/>
+                </svg>
+                <div className="flex flex-col items-start">
+                  <span className="text-xs">GET IT ON</span>
+                  <span className="text-sm font-semibold">Google Play</span>
+                </div>
+              </a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="relative">
-              <div className="absolute inset-0 bg-akotex-red/20 rounded-full opacity-30 blur-3xl"></div>
-              <div className="relative bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20 shadow-xl">
-                <h3 className="text-2xl font-semibold mb-6">Investment Performance</h3>
-                <div className="space-y-6">
-                  <div>
-                    <div className="flex justify-between mb-3">
-                      <span>Indices & ETFs</span>
-                      <span className="font-semibold text-akotex-red">+12.4%</span>
-                    </div>
-                    <div className="w-full bg-white/20 rounded-full h-2.5">
-                      <div className="bg-akotex-red h-2.5 rounded-full" style={{ width: "75%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between mb-3">
-                      <span>Real Estate</span>
-                      <span className="font-semibold text-akotex-red">+8.7%</span>
-                    </div>
-                    <div className="w-full bg-white/20 rounded-full h-2.5">
-                      <div className="bg-akotex-red h-2.5 rounded-full" style={{ width: "65%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between mb-3">
-                      <span>Crypto</span>
-                      <span className="font-semibold text-akotex-red">+21.3%</span>
-                    </div>
-                    <div className="w-full bg-white/20 rounded-full h-2.5">
-                      <div className="bg-akotex-red h-2.5 rounded-full" style={{ width: "85%" }}></div>
-                    </div>
-                  </div>
+          
+          {/* Right Mobile Preview Column */}
+          <div className="order-1 md:order-2 relative">
+            <div className="relative w-full h-[500px] md:h-[600px]">
+              {/* Multiple floating phone mockups */}
+              <div className="absolute right-0 top-0 w-[70%] transform rotate-3">
+                <img 
+                  src="/lovable-uploads/09e0d919-7f27-4b5b-881a-beb6edaff475.png" 
+                  alt="Akotex Wealth Mobile App" 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              
+              {/* Investment card mockup */}
+              <div className="absolute left-0 bottom-10 z-10 w-[60%] bg-white dark:bg-gray-800 rounded-xl p-4 shadow-xl border border-gray-200 dark:border-gray-700 transform -rotate-3">
+                <div className="mb-2">
+                  <span className="text-xs text-gray-500">Property Investment</span>
+                  <h3 className="font-bold text-lg">Downtown Apartment</h3>
+                </div>
+                <div className="flex justify-between items-center my-2">
+                  <span className="text-sm">Annual return</span>
+                  <span className="text-akotex-red font-bold text-xl">+8.7%</span>
+                </div>
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 my-2">
+                  <div className="bg-akotex-red h-2 rounded-full" style={{ width: "70%" }}></div>
+                </div>
+                <div className="flex justify-between text-xs text-gray-500">
+                  <span>$230,500 funded</span>
+                  <span>$350,000 goal</span>
                 </div>
               </div>
             </div>
