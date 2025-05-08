@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
@@ -80,6 +79,35 @@ const FooterSection = () => {
             <Link to="/privacy" className="hover:text-akotex-red transition-colors">Privacy</Link>
             <Link to="/compliance" className="hover:text-akotex-red transition-colors">Compliance</Link>
             <Link to="/security" className="hover:text-akotex-red transition-colors">Security</Link>
+          </div>
+        </div>
+
+        {/* New Disclaimer Section */}
+        <div className="mt-8 pt-8 border-t border-gray-800">
+          <div className="text-xs text-gray-500 leading-relaxed">
+            <p className="mb-4">
+              Akotex Investment LLC is regulated by the Financial Services Authority (FSA) as an Operator of a Property Investment Crowdfunding Platform. 
+              At present there are no regulatory restrictions imposed on Akotex by the FSA. Akotex platform consists of the website and mobile app. 
+              By using Akotex, you agree to be bound by the Terms & Conditions, Cookie Notice and Privacy Policy.
+            </p>
+            <p className="mb-4">
+              All investments through Akotex carry risk and are not guaranteed. Past performance is not a reliable indicator of future results. 
+              Please read Key Risks before investing. Akotex Investment LLC also has an Islamic Finance certification from the FSA. 
+              Akotex is authorized to offer Shariah compliant investments.
+            </p>
+            <p className="mb-4">
+              Akotex Financial Technology Company is regulated by the Capital Market Authority (CMA) to enter under its FinTech Lab 
+              and licensed to launch real estate investment fund opportunities. The Akotex platform, which includes our website and mobile apps, 
+              operates under the regulatory framework established by the CMA for innovative financial technologies.
+            </p>
+            <p>
+              By using Akotex, you agree to abide by our Terms & Conditions, Cookie Notice, and Privacy Policy. 
+              While offering unique investment opportunities in the real estate market, we remind our investors that all investments carry risks 
+              and returns are not guaranteed. We encourage you to review the Key Risks before investing.
+            </p>
+          </div>
+          <div className="mt-6 text-xs text-gray-500">
+            <p>123 Financial District, Suite 500, New York, NY 10001, USA</p>
           </div>
         </div>
       </div>
