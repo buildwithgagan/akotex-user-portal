@@ -6,7 +6,6 @@ import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
-import CustomPortfolioSection from "@/components/home/CustomPortfolioSection";
 import BackedBySection from "@/components/home/BackedBySection";
 
 const HomePage = () => {
@@ -35,9 +34,6 @@ const HomePage = () => {
       </div>
       <div className="animate-fade-in" style={{ animationDelay: "600ms" }}>
         <CtaSection />
-      </div>
-      <div className="animate-fade-in" style={{ animationDelay: "700ms" }}>
-        <CustomPortfolioSection />
       </div>
     </div>
   );
