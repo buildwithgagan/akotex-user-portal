@@ -1,43 +1,41 @@
 
-import { Star } from "lucide-react";
-
 // Define logos and their information
 const partnerLogos = [
   {
     id: 1,
-    name: "Sequoia Capital",
-    logo: "SC",
+    name: "SoftBank Group",
+    logo: "/lovable-uploads/3c35e68d-a948-4458-a773-4639db77617c.png",
     description: "Leading venture capital firm"
   },
   {
     id: 2,
-    name: "Andreessen Horowitz",
-    logo: "a16z",
-    description: "Silicon Valley venture capital firm"
+    name: "BlackRock",
+    logo: "/lovable-uploads/ad790466-06f6-44b7-8b53-c68aeaf2744b.png",
+    description: "World's largest asset manager"
   },
   {
     id: 3,
-    name: "Tiger Global",
-    logo: "TG",
-    description: "Investment firm focused on global growth"
-  },
-  {
-    id: 4,
-    name: "SoftBank",
-    logo: "SB",
-    description: "Multinational conglomerate"
-  },
-  {
-    id: 5,
     name: "Accel",
-    logo: "A",
+    logo: "/lovable-uploads/d24ba805-2050-47c0-974b-1969e8abe923.png",
     description: "Global venture capital firm"
   },
   {
+    id: 4,
+    name: "Emerald Capital",
+    logo: "/lovable-uploads/2a18aa24-e586-4816-a476-9f545fc50931.png",
+    description: "Investment firm focused on global growth"
+  },
+  {
+    id: 5,
+    name: "Sequoia Capital",
+    logo: "SC",
+    description: "Silicon Valley venture capital firm"
+  },
+  {
     id: 6,
-    name: "BlackRock",
-    logo: "BR",
-    description: "World's largest asset manager"
+    name: "Tiger Global",
+    logo: "TG",
+    description: "Multinational investment firm"
   }
 ];
 
@@ -56,11 +54,18 @@ const BackedBySection = () => {
               key={partner.id} 
               className="flex flex-col items-center justify-center text-center group"
             >
-              <div className="h-20 w-20 md:h-24 md:w-24 rounded-full bg-gray-800 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-akotex-red">
-                <div className="text-xl md:text-2xl font-bold flex items-center">
-                  <span>{partner.logo}</span>
-                  <Star className="h-4 w-4 ml-1 fill-current" />
-                </div>
+              <div className="h-20 w-20 md:h-24 md:w-24 rounded-xl bg-white flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-105 p-3">
+                {partner.logo.startsWith('/') ? (
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <div className="text-xl md:text-2xl font-bold text-gray-900">
+                    {partner.logo}
+                  </div>
+                )}
               </div>
               <h4 className="text-base font-medium mb-1">{partner.name}</h4>
               <p className="text-xs text-gray-400">{partner.description}</p>
