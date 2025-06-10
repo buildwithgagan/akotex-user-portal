@@ -8,16 +8,16 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-100 fixed w-full z-50">
+    <nav className="bg-white shadow-sm border-b border-gray-100 fixed w-full z-50 h-[70px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center">
                 <img 
-                  src="/lovable-uploads/70753024-7e70-4502-981c-d3cc6d7218b7.png" 
+                  src="/images/logo.png" 
                   alt="Akotex Group Logo" 
-                  className="h-12 w-auto"
+                  className="h-8 w-auto"
                 />
               </Link>
             </div>
@@ -25,16 +25,16 @@ const Navbar = () => {
           
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-sm font-medium">
+            <Link to="/" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-[17px] font-medium">
               Home
             </Link>
-            <Link to="/investments" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-sm font-medium">
+            <Link to="/investments" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-[17px] font-medium">
               Investments
             </Link>
-            <Link to="/performance" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-sm font-medium">
+            <Link to="/performance" className="text-akotex-black hover:text-akotex-red px-3 py-2 text-[17px] font-medium">
               Performance
             </Link>
-            <Button asChild variant="outline" className="border-akotex-black text-akotex-black hover:bg-akotex-black hover:text-white">
+            <Button asChild variant="outline" className="bg-akotex-black text-white hover:bg-akotex-black/80 hover:text-white">
               <Link to="/login">Login</Link>
             </Button>
             <Button asChild className="bg-akotex-red hover:bg-akotex-darkred text-white">

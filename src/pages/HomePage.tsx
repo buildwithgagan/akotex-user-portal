@@ -20,6 +20,9 @@ const HomePage = () => {
       <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
         <InvestmentOptionsSection />
       </div>
+      <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
+        <CtaSection />
+      </div>
       <div className="animate-fade-in" style={{ animationDelay: "300ms" }}>
         <WhyChooseUsSection />
       </div>

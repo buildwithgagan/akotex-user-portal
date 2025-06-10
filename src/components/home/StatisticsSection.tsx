@@ -26,14 +26,14 @@ const StatisticsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-poppins">
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-2 font-poppins">
             Explore a Smarter Way to Invest
           </h2>
-          <p className="text-xl text-akotex-red font-semibold font-inter">
+          <p className="text-2xl md:text-4xl text-akotex-red font-semibold font-poppins">
             — Trusted by Thousands
           </p>
         </div>
@@ -41,7 +41,7 @@ const StatisticsSection = () => {
         {/* Desktop Layout - 4 Cards in One Line */}
         <div className="hidden lg:flex gap-6 items-center justify-center">
           {/* First Stat Card */}
-          <div className="bg-[#FAFDFF] rounded-2xl p-6 shadow-lg min-h-[340px] min-w-[220px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
+          <div className="bg-[#FAFDFF] border border-[#E0E8EC] rounded-[20px] p-6 shadow-lg min-h-[340px] min-w-[250px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
             {/* Content Side (Left) */}
             <div className="flex flex-col justify-between flex-1 relative z-10">
                 <div className="">
@@ -51,7 +51,7 @@ const StatisticsSection = () => {
                 <p className="text-3xl font-semibold text-gray-900 mb-2 font-poppins group-hover:text-white transition-colors duration-300">
                   {stats[0].value}
                 </p>
-                <p className="text-gray-600 font-medium text-sm font-inter leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[100px]">
+                <p className="text-gray-600 font-light text-md font-poppins leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[105px]">
                   {stats[0].label}
                 </p>
               </div>
@@ -70,7 +70,7 @@ const StatisticsSection = () => {
           </div>
 
           {/* Second Stat Card */}
-          <div className="bg-[#FAFDFF] rounded-2xl p-6 shadow-lg min-h-[340px] min-w-[220px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
+          <div className="bg-[#FAFDFF] border border-[#E0E8EC] rounded-[20px] p-6 shadow-lg min-h-[340px] min-w-[250px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
             {/* Content Side (Left) */}
             <div className="flex flex-col justify-between flex-1 relative z-10">
                 <div className="">
@@ -80,7 +80,7 @@ const StatisticsSection = () => {
                 <p className="text-3xl font-semibold text-gray-900 mb-2 font-poppins group-hover:text-white transition-colors duration-300">
                   {stats[1].value}
                 </p>
-                <p className="text-gray-600 font-medium text-sm font-inter leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[100px]">
+                <p className="text-gray-600 font-light text-sm font-poppins leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[105px]">
                   {stats[1].label}
                 </p>
               </div>
@@ -99,7 +99,7 @@ const StatisticsSection = () => {
           </div>
 
           {/* Third Stat Card */}
-          <div className="bg-[#FAFDFF] rounded-2xl p-6 shadow-lg min-h-[340px] min-w-[220px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
+          <div className="bg-[#FAFDFF] border border-[#E0E8EC] rounded-[20px] p-6 shadow-lg min-h-[340px] min-w-[250px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
             {/* Content Side (Left) */}
             <div className="flex flex-col justify-between flex-1 relative z-10">
                 <div className="">
@@ -109,7 +109,7 @@ const StatisticsSection = () => {
                 <p className="text-3xl font-semibold text-gray-900 mb-2 font-poppins group-hover:text-white transition-colors duration-300">
                   {stats[2].value}
                 </p>
-                <p className="text-gray-600 font-medium text-sm font-inter leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[100px]">
+                <p className="text-gray-600 font-light text-md font-poppins leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[105px]">
                   {stats[2].label}
                 </p>
               </div>
@@ -128,7 +128,7 @@ const StatisticsSection = () => {
           </div>
 
           {/* Fourth Stat Card */}
-          <div className="bg-[#FAFDFF] rounded-2xl p-6 shadow-lg min-h-[340px] min-w-[220px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
+          <div className="bg-[#FAFDFF] border border-[#E0E8EC] rounded-[20px] p-6 shadow-lg min-h-[340px] min-w-[250px] flex relative overflow-hidden group hover:bg-gray-900 transition-all duration-300">
             {/* Content Side (Left) */}
             <div className="flex flex-col justify-between flex-1 relative z-10">
                 <div className="">
@@ -138,7 +138,7 @@ const StatisticsSection = () => {
                 <p className="text-3xl font-semibold text-gray-900 mb-2 font-poppins group-hover:text-white transition-colors duration-300">
                   {stats[3].value}
                 </p>
-                <p className="text-gray-600 font-medium text-sm font-inter leading-tight group-hover:text-gray-200 transition-colors duration-300 max-w-[100px]">
+                <p className="text-gray-600 font-light text-md font-poppins group-hover:text-gray-200 transition-colors duration-300 max-w-[105px]">
                   {stats[3].label}
                 </p>
               </div>
