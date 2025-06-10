@@ -89,7 +89,7 @@ const WhyChooseUsSection = () => {
             />
             
             {/* Mobile Phone Overlay */}
-            <div className="absolute bottom-8 left-8">
+            <div className="absolute bottom-8 left-[-80px]">
               <div className="bg-white rounded-3xl p-2 shadow-2xl">
                 <div className="bg-gray-900 rounded-2xl p-1">
                   <div className="bg-white rounded-xl overflow-hidden">

@@ -23,9 +23,9 @@ const HomePage = () => {
       <div className="animate-fade-in" style={{ animationDelay: "300ms" }}>
         <WhyChooseUsSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "350ms" }}>
+      {/* <div className="animate-fade-in" style={{ animationDelay: "350ms" }}>
         <BackedBySection />
-      </div>
+      </div> */}
       <div className="animate-fade-in" style={{ animationDelay: "400ms" }}>
         <TestimonialsSection />
       </div>
