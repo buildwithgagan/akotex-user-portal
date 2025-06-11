@@ -46,7 +46,7 @@ const WhyChooseUsSection = () => {
               Advantage
             </h2>
 
-            <p className="text-md text-gray-600 mb-12 font-inter leading-relaxed max-w-lg">
+            <p className="text-md text-[#414141] font-normal mb-12 font-inter leading-relaxed max-w-lg">
               We provide a secure, transparent and professional investment
               experience designed to help you reach your financial goals.
             </p>

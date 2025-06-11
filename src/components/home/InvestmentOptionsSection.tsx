@@ -77,38 +77,44 @@ const InvestmentOptionsSection = () => {
                 {investmentOptions.map((option, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
+                    className="border border-[#E0E8EC] p-4 rounded-[20px] bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
                   >
-                    <div className="flex items-start gap-4">
-                      {/* Icon */}
-                      <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                    {" "}
+                    <div
+                      className="flex items-start gap-4"
+                      style={{ alignItems: "center" }}
+                    >
+                      <div className="bg-gray-900 rounded-[10px] p-2 flex-shrink-0">
                         <img
                           src={option.icon}
                           alt={option.title}
-                          className="w-6 h-6"
+                          className="w-8 h-8"
                         />
                       </div>
 
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 font-poppins text-gray-900">
+                        <h3 className="text-md font-medium font-poppins text-gray-900">
                           {option.title}
                         </h3>
-
-                        <p className="text-gray-600 mb-4 font-inter leading-relaxed">
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1">
+                        <p className="text-gray-600 font-inter mt-2 mb-4 leading-relaxed pe-6">
                           {option.description}
                         </p>
 
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <p className="text-sm text-gray-500 font-inter">
+                        <div className="">
+                          <div className="flex justify-between">
+                            <p className="text-gray-600 font-inter leading-relaxed">
                               Minimum Investment
                             </p>
                             <p className="font-bold text-gray-900">
                               {option.minInvestment}
                             </p>
                           </div>
-                          <div className="text-right">
-                            <p className="text-sm text-gray-500 font-inter">
+                          <div className="flex justify-between">
+                            <p className="text-gray-600 font-inter leading-relaxed">
                               Avg. Annual Return
                             </p>
                             <p className="font-bold text-gray-900">

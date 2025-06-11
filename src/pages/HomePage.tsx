@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
 import BackedBySection from "@/components/home/BackedBySection";
+import CtaSection2 from "@/components/home/CtaSection2";
 
 const HomePage = () => {
   return (
@@ -32,11 +33,11 @@ const HomePage = () => {
       <div className="animate-fade-in" style={{ animationDelay: "400ms" }}>
         <TestimonialsSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "500ms" }}>
+      {/* <div className="animate-fade-in" style={{ animationDelay: "500ms" }}>
         <FaqSection />
-      </div>
+      </div> */}
       <div className="animate-fade-in" style={{ animationDelay: "600ms" }}>
-        <CtaSection />
+        <CtaSection2 />
       </div>
     </div>
   );

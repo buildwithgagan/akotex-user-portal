@@ -8,7 +8,7 @@ const CtaSection = () => {
       <div className="rounded-[30px] p-20 bg-[#EC3237] text-white relative overflow-hidden bg-[url('/images/cta_bg.png')] bg-cover bg-center bg-no-repeat">
      
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 my-4">
         <div className="w-[500px]">
           {/* Left Content */}
           <div className="text-center lg:text-left">

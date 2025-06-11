@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star, CheckCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, CheckCircle, ArrowLeftFromLine, ArrowLeft, ArrowRight } from "lucide-react";
 
 type Testimonial = {
   id: number;
@@ -21,9 +20,9 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     role: "Financial Advisor",
     company: "Capital Investments",
-    content: "Akotex Wealth Compass has completely transformed how my clients approach investments. The platform's intuitive interface and diverse portfolio options make it easy to recommend.",
+    content: "Akotex Investment has completely transformed how my clients approach investments. The platform's intuitive interface and diverse portfolio options make it easy to recommend.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b742?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     verified: true,
   },
   {
@@ -46,16 +45,6 @@ const testimonials: Testimonial[] = [
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     verified: true,
   },
-  {
-    id: 4,
-    name: "David Kim",
-    role: "Software Engineer",
-    company: "TechCorp",
-    content: "The real estate investment options through Akotex have been fantastic. I've been able to diversify my portfolio with properties I could never afford individually.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    verified: true,
-  },
 ];
 
 const TestimonialsSection = () => {
@@ -73,124 +62,117 @@ const TestimonialsSection = () => {
     return [...Array(5)].map((_, i) => (
       <Star
         key={i}
-        className={`h-5 w-5 ${
-          i < rating ? 'text-akotex-red fill-current' : 'text-gray-300'
+        className={`h-[20.6px] w-[20.6px] ${
+          i < rating ? 'text-[#FFCE5C] fill-current' : 'text-[#D9D9D9] fill-current'
         }`}
       />
     ));
   };
 
   return (
-    <section className="py-32 px-4 bg-gradient-to-br from-akotex-lightgray via-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Enhanced Section Header */}
-        <div className="text-center mb-20">
-          <div className="inline-block px-6 py-3 bg-akotex-red/10 rounded-full mb-6">
-            <span className="text-sm font-semibold text-akotex-red font-inter">Client Stories</span>
+    <section className="px-4 lg:px-20">
+      <div
+        className="max-w-8xl mx-auto"
+        style={{
+          background: "linear-gradient(180deg, #EEF4F8 0%, #FFFFFF 100%)",
+          borderRadius: "30px",
+        }}
+      >
+        <div className="max-w-7xl mx-auto py-16">
+          {/* Section Header */}
+         <div className="flex justify-between"> <div className="mb-12 px-4">
+            <h2 className="text-[52px] font-semibold mb-5 font-poppins leading-[1.15] text-black">
+              Hear from Our Investors
+            </h2>
+            <p className="text-[20px] text-[#414141] font-normal font-poppins leading-[1.7] max-w-[670px]">
+              Don't just take our word for it. Listen to the success stories from our diverse community of investors.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-poppins">Hear from Our Investors</h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-inter leading-relaxed">
-            Don't just take our word for it. Listen to the success stories from our diverse community of satisfied investors.
-          </p>
-        </div>
-
-        {/* Enhanced Carousel Container */}
-        <div className="relative">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[0, 1, 2].map((offset) => {
-              const testimonialIndex = (currentIndex + offset) % testimonials.length;
-              const testimonial = testimonials[testimonialIndex];
+                      {/* Navigation */}
+                      <div className="flex justify-center items-center gap-4 mt-8">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={prevTestimonial}
+                className="rounded-full w-[71px] h-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black"
+              >
+                <ArrowLeft className="h-6 w-6" />
+              </Button>
               
-              return (
-                <Card 
-                  key={testimonial.id} 
-                  className={`overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-500 bg-white rounded-2xl ${
-                    offset === 1 ? 'lg:scale-105 lg:z-10' : 'lg:scale-95'
-                  }`}
-                >
-                  <CardContent className="p-8">
-                    {/* Avatar and Info */}
-                    <div className="flex items-center mb-6">
-                      <div className="relative">
-                        <img 
-                          src={testimonial.avatar} 
-                          alt={testimonial.name} 
-                          className="w-16 h-16 rounded-full object-cover shadow-lg"
-                        />
-                        {testimonial.verified && (
-                          <CheckCircle className="absolute -bottom-1 -right-1 h-6 w-6 text-akotex-red bg-white rounded-full" />
-                        )}
+              {/* Dots Indicator */}
+              {/* <div className="flex gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentIndex ? 'bg-akotex-red scale-125' : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
+              </div> */}
+              
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={nextTestimonial}
+                className="rounded-full w-[71px] h-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black"
+              >
+                <ArrowRight className="h-6 w-6" />
+              </Button>
+            </div></div>
+
+          {/* Testimonials Container */}
+          <div className="relative px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {[0, 1].map((offset) => {
+                const testimonialIndex = (currentIndex + offset) % testimonials.length;
+                const testimonial = testimonials[testimonialIndex];
+                
+                return (
+                  <Card 
+                    key={testimonial.id} 
+                    className="overflow-hidden border-[1px] border-[#D9E2E8] shadow-none hover:shadow-lg transition-all duration-500 bg-white rounded-[20px] backdrop-blur-[4px]"
+                  >
+                    <CardContent className="p-[60px]">
+                      {/* Rating Stars */}
+                      <div className="flex items-center mb-4 gap-[0.4px]">
+                        {renderStars(testimonial.rating)}
                       </div>
-                      <div className="ml-4 flex-1">
-                        <h4 className="font-bold text-lg font-poppins">{testimonial.name}</h4>
-                        <p className="text-gray-600 font-inter">
-                          {testimonial.role}
-                          {testimonial.company && `, ${testimonial.company}`}
-                        </p>
+
+                      {/* Testimonial Content */}
+                      <blockquote className="text-md text-black font-normal font-poppins leading-[2] mb-16">
+                        "{testimonial.content}"
+                      </blockquote>
+
+                      {/* Avatar and Info */}
+                      <div className="flex items-center">
+                        <div className="relative">
+                          <img 
+                            src={testimonial.avatar} 
+                            alt={testimonial.name} 
+                            className="w-[60px] h-[60px] rounded-[5px] object-cover"
+                          />
+                          {/* {testimonial.verified && (
+                            <CheckCircle className="absolute -bottom-1 -right-1 h-6 w-6 text-akotex-red bg-white rounded-full" />
+                          )} */}
+                        </div>
+                        <div className="ml-[18px]">
+                          <h4 className="font-poppins font-medium text-xl text-black">{testimonial.name}</h4>
+                          <p className="font-poppins font-light text-md text-[#A8A8A8]">
+                            {testimonial.role}
+                            {testimonial.company && `, ${testimonial.company}`}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-
-                    {/* Rating Stars */}
-                    <div className="flex items-center mb-4">
-                      {renderStars(testimonial.rating)}
-                      <span className="ml-2 text-sm text-gray-600 font-inter">
-                        {testimonial.rating}.0
-                      </span>
-                    </div>
-
-                    {/* Testimonial Content */}
-                    <blockquote className="text-gray-700 italic leading-relaxed font-inter text-lg">
-                      "{testimonial.content}"
-                    </blockquote>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Enhanced Navigation Buttons */}
-          <div className="flex justify-center items-center gap-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevTestimonial}
-              className="rounded-full border-2 border-gray-300 hover:border-akotex-red hover:text-akotex-red w-12 h-12 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-            
-            {/* Dots Indicator */}
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-akotex-red scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
-            
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextTestimonial}
-              className="rounded-full border-2 border-gray-300 hover:border-akotex-red hover:text-akotex-red w-12 h-12 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-        </div>
 
-        {/* Enhanced Bottom CTA */}
-        <div className="text-center mt-16">
-          <Button 
-            variant="outline" 
-            className="border-2 border-akotex-red text-akotex-red hover:bg-akotex-red hover:text-white font-bold text-lg py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-inter"
-          >
-            Read More Success Stories
-          </Button>
+
+          </div>
         </div>
       </div>
     </section>
