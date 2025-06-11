@@ -13,7 +13,7 @@ import MarketComparisonChart from "@/components/dashboard/MarketComparisonChart"
 
 const PerformancePage = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 px-4 lg:px-0 py-20 lg:py-0 max-w-7xl mx-auto">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Performance Analysis</h1>
         <p className="text-muted-foreground mt-2">
@@ -189,7 +189,7 @@ const PerformancePage = () => {
         </TabsContent>
       </Tabs>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 w-fit">
         <Card>
           <CardHeader>
             <CardTitle>Performance Metrics</CardTitle>

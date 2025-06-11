@@ -30,54 +30,49 @@ const features = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="py-20 px-4 bg-white bg-[url('/images/whychoose_bg.png')] bg-no-repeat bg-center">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-6 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Content */}
           <div>
-            <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-4 py-0 mb-6">
-              <span className="text-[12px] text-gray font-normal">
+            <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
+              <span className="text-xs sm:text-[12px] text-gray font-normal">
                 Why Choose Us
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-4xl font-semibold text-gray-900 mb-8 font-poppins leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8 font-poppins leading-tight">
               The <span className="text-akotex-red">Akotex</span> Wealth
               Advantage
             </h2>
 
-            <p className="text-md text-[#414141] font-normal mb-12 font-inter leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-md text-[#414141] font-normal mb-8 sm:mb-12 font-inter leading-relaxed max-w-md sm:max-w-lg">
               We provide a secure, transparent and professional investment
               experience designed to help you reach your financial goals.
             </p>
 
             {/* Feature Cards */}
-            <div className="space-y-8 me-20">
+            <div className="space-y-6 sm:space-y-8 lg:me-12">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="border border-[#E0E8EC] p-4 rounded-[20px]"
+                  className="border border-[#E0E8EC] p-4 sm:p-5 rounded-[20px] max-w-lg"
                 >
-                  {/* Icon Badge */}
-                  <div
-                    className="flex items-start gap-4"
-                    style={{ alignItems: "center" }}
-                  >
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <div className="bg-gray-900 rounded-[10px] p-2 flex-shrink-0">
                       <img
                         src={feature.icon}
                         alt={feature.title}
-                        className="w-8 h-8"
+                        className="w-6 h-6 sm:w-8 sm:h-8"
                       />
                     </div>
-
                     <div className="flex-1">
-                      <h3 className="text-md font-medium font-poppins text-gray-900">
+                      <h3 className="text-sm sm:text-md font-medium font-poppins text-gray-900">
                         {feature.title}
                       </h3>
                     </div>
                   </div>
-                  <p className="text-gray-600 font-inter mt-2 leading-relaxed pe-6">
+                  <p className="text-xs sm:text-sm text-gray-600 font-inter mt-2 sm:mt-3 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -86,15 +81,27 @@ const WhyChooseUsSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative !h-100" style={{ height: "100%" }}>
-            <div className="absolute bottom-0">
-              {" "}
-              <img
-                src="/images/whychoose.png"
-                alt="Professional wealth management"
-                className="rounded-2xl w-full h-[600px]"
-              />
+          <div className="lg:relative" style={{ height: "100%" }}>
+            <div className="hidden lg:block lg:absolute bottom-0">
+              <div className="lg:relative">
+                {" "}
+                <img
+                  src="/images/whyGirl.png"
+                  alt="Professional wealth management"
+                  className=" max-h-[600px] object-fit -translate-y-10"
+                />
+                <img
+                  src="/images/whyPhone.png"
+                  alt="Professional wealth management"
+                  className="absolute h-[75%] bottom-0 left-0 -translate-x-1/2 object-center"
+                />
+              </div>
             </div>
+            <img
+              src="/images/whychoose.png"
+              alt="Professional wealth management"
+              className=" object-center md:hidden"
+            />
 
             {/* Decorative Red Dots */}
             {/* <div className="absolute bottom-4 right-8 flex gap-2">

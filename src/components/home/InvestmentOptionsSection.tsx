@@ -30,7 +30,7 @@ const InvestmentOptionsSection = () => {
   ];
 
   return (
-    <section className="px-4 lg:px-20">
+    <section className="px-4 sm:px-6 lg:px-20">
       <div
         className="max-w-8xl mx-auto"
         style={{
@@ -38,30 +38,30 @@ const InvestmentOptionsSection = () => {
           borderRadius: "30px",
         }}
       >
-        <div className="max-w-7xl mx-auto py-16">
+        <div className="max-w-7xl mx-auto py-12 sm:py-16">
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center relative">
-            {/* Left Side - Mobile Mockup */}
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center px-4 lg:px-0">
+            {/* Left Side - Text and Mobile Mockup */}
             <div className="relative">
-              <div className="">
-                <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-4 py-0 mb-6">
-                  <span className="text-[12px] text-gray font-normal">
+              <div className="mb-6 sm:mb-8">
+                <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
+                  <span className="text-xs sm:text-[12px] text-gray font-normal">
                     Investment Options
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-poppins">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 font-poppins">
                   Diversified
                   <br />
                   <span className="text-akotex-red">Investment Portfolios</span>
                 </h2>
-                <p className="text-lg text-gray-600 max-w-md font-inter mb-4">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-md font-inter mb-4">
                   Choose from our professionally managed investment portfolios
                   tailored to meet your financial goals.
                 </p>
               </div>
-              <div className="bg-gray-900 rounded-3xl relative overflow-hidden max-full">
+              <div className="bg-gray-900 rounded-3xl relative overflow-hidden w-full">
                 {/* Phone Frame */}
-                <div className=" rounded-2xl overflow-hidden shadow-xl">
+                <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
                     src="/assets/invest.png"
                     alt="Investment App Interface"
@@ -73,54 +73,46 @@ const InvestmentOptionsSection = () => {
 
             {/* Right Side - Investment Options */}
             <div>
-              <div className="space-y-8 absolute bottom-0">
+              <div className="space-y-6 sm:space-y-8">
                 {investmentOptions.map((option, index) => (
                   <div
                     key={index}
-                    className="border border-[#E0E8EC] p-4 rounded-[20px] bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
+                    className="border border-[#E0E8EC] rounded-[20px] bg-white p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
                   >
-                    {" "}
-                    <div
-                      className="flex items-start gap-4"
-                      style={{ alignItems: "center" }}
-                    >
+                    <div className="flex items-center gap-3 sm:gap-4">
                       <div className="bg-gray-900 rounded-[10px] p-2 flex-shrink-0">
                         <img
                           src={option.icon}
                           alt={option.title}
-                          className="w-8 h-8"
+                          className="w-6 h-6 sm:w-8 sm:h-8"
                         />
                       </div>
-
                       <div className="flex-1">
-                        <h3 className="text-md font-medium font-poppins text-gray-900">
+                        <h3 className="text-sm sm:text-md font-medium font-poppins text-gray-900">
                           {option.title}
                         </h3>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-1">
-                        <p className="text-gray-600 font-inter mt-2 mb-4 leading-relaxed pe-6">
-                          {option.description}
-                        </p>
-
-                        <div className="">
-                          <div className="flex justify-between">
-                            <p className="text-gray-600 font-inter leading-relaxed">
-                              Minimum Investment
-                            </p>
-                            <p className="font-bold text-gray-900">
-                              {option.minInvestment}
-                            </p>
-                          </div>
-                          <div className="flex justify-between">
-                            <p className="text-gray-600 font-inter leading-relaxed">
-                              Avg. Annual Return
-                            </p>
-                            <p className="font-bold text-gray-900">
-                              {option.avgReturn}
-                            </p>
-                          </div>
+                    <div className="mt-3 sm:mt-4">
+                      <p className="text-xs sm:text-sm text-gray-600 font-inter mb-3 sm:mb-4 leading-relaxed">
+                        {option.description}
+                      </p>
+                      <div className="grid grid-cols-2 gap-2 sm:gap-4">
+                        <div>
+                          <p className="text-xs sm:text-sm text-gray-600 font-inter leading-relaxed">
+                            Minimum Investment
+                          </p>
+                          <p className="text-sm sm:text-base font-bold text-gray-900">
+                            {option.minInvestment}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs sm:text-sm text-gray-600 font-inter leading-relaxed">
+                            Avg. Annual Return
+                          </p>
+                          <p className="text-sm sm:text-base font-bold text-gray-900">
+                            {option.avgReturn}
+                          </p>
                         </div>
                       </div>
                     </div>
