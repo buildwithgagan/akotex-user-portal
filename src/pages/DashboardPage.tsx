@@ -13,7 +13,7 @@ import PerformanceMetrics from "@/components/dashboard/PerformanceMetrics";
 const DashboardPage = () => {
   return (
     <div className="space-y-6">
-      <div>
+      <div className="my-10">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
         <p className="text-muted-foreground">
           Welcome back! Here's an overview of your investments
