@@ -272,8 +272,8 @@ const PerformancePage = () => {
           </div>
           <TrendingUp className="h-5 w-5 text-akotex-red" />
         </CardHeader>
-        <CardContent className="pt-4">
-          <div className="lg:h-[400px]">
+        <CardContent className="h-full pt-4 ov">
+          <div className="lg:h-[700px] overflow-y-auto">
             <MarketComparisonChart />
           </div>
           <div className="mt-6">
