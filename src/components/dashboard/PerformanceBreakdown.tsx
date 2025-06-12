@@ -72,7 +72,7 @@ const PerformanceBreakdown = () => {
         </ChartContainer>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {data.map((item, index) => (
           <div key={index} className="border rounded-lg p-4">
             <div className="flex items-center gap-2 mb-2">

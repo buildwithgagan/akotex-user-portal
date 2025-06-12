@@ -169,7 +169,7 @@ const InvestmentOptionsPage = () => {
         
         <Tabs defaultValue="etf" className="mb-16">
           <div className="flex justify-center mb-8">
-            <TabsList className="grid grid-cols-3 w-full max-w-xl">
+            <TabsList className="grid grid-cols-3 w-full max-w-xl h-full border">
               <TabsTrigger value="etf" className="flex items-center gap-2 py-3">
                 <PieChart className="h-4 w-4" />
                 <span className="hidden sm:inline">Indices & ETFs</span>
