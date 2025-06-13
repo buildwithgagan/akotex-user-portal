@@ -1,10 +1,10 @@
-
 import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import DashboardSidebar from "./dashboard/DashboardSidebar";
 import FooterSection from "./home/FooterSection";
+import AuthSideView from "./auth/AuthSideView";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,7 +12,10 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
-  const isDashboard = location.pathname.includes('/dashboard');
+  const pathname = location.pathname;
+  const isDashboard = location.pathname.includes("/dashboard");
+  const authPaths = ["/login", "/signup", "/forgot-password"];
+  const isAuth = authPaths.includes(pathname);
 
   if (isDashboard) {
     return (
@@ -20,21 +23,28 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="flex w-full min-h-screen bg-gray-50 dark:bg-gray-900">
           <DashboardSidebar />
           <SidebarInset className="pt-6">
-            <div className="container mx-auto px-4">
-              {children}
-            </div>
+            <div className="container mx-auto px-4">{children}</div>
           </SidebarInset>
         </div>
       </SidebarProvider>
     );
   }
 
+  if (isAuth) {
+    return (
+      <div className="flex min-h-screen">
+        <AuthSideView />
+        <div className="flex items-center justify-center flex-1 p-4 md:p-8">
+          {children}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1  mt-[70px]">
-        {children}
-      </main>
+      <main className="flex-1  mt-[70px]">{children}</main>
       <FooterSection />
     </div>
   );

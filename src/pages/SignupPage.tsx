@@ -23,19 +23,26 @@ const signupSchema = z.object({
   password: z
     .string()
     .min(8, { message: "Password must be at least 8 characters" }),
+  confirmPassword: z
+    .string()
+    .min(8, { message: "Password must be at least 8 characters" })
+    // .refine((data) => data === form.getValues("password"), {
+    //   message: "Passwords do not match",
+    // }),
 });
 
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
@@ -140,6 +147,41 @@ const SignupPage = () => {
                             }
                           >
                             {showPassword ? (
+                              <EyeOff className="h-5 w-5" />
+                            ) : (
+                              <Eye className="h-5 w-5" />
+                            )}
+                          </button>
+                        </div>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="confirmPassword"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Confirm Password</FormLabel>
+                      <FormControl>
+                        <div className="relative">
+                          <Input
+                            type={showConfirmPassword ? "text" : "password"}
+                            placeholder="••••••••"
+                            {...field}
+                            className="pl-10 pr-10"
+                          />
+                          <Lock className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                          <button
+                            type="button"
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                            className="absolute right-3 top-2.5 text-muted-foreground hover:text-foreground"
+                            aria-label={
+                              showConfirmPassword ? "Hide password" : "Show password"
+                            }
+                          >
+                            {showConfirmPassword ? (
                               <EyeOff className="h-5 w-5" />
                             ) : (
                               <Eye className="h-5 w-5" />

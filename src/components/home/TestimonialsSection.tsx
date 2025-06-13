@@ -102,9 +102,9 @@ const TestimonialsSection = () => {
                 variant="outline"
                 size="icon"
                 onClick={prevTestimonial}
-                className="rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black"
+                className="group rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black hover:text-black"
               >
-                <ArrowLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+                <ArrowLeft className="size-5 group-hover:size-6 transition-all duration-300" />
               </Button>
 
               {/* Dots Indicator (Commented Out) */}
@@ -124,9 +124,9 @@ const TestimonialsSection = () => {
                 variant="outline"
                 size="icon"
                 onClick={nextTestimonial}
-                className="rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black"
+                className="group rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black hover:text-black"
               >
-                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                <ArrowRight className="size-5 group-hover:size-6 transition-all duration-300" />
               </Button>
             </div>
           </div>

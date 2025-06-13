@@ -33,9 +33,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout><HomePage /></Layout>} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/login" element={<Layout><LoginPage /></Layout>} />
+            <Route path="/signup" element={<Layout><SignupPage /></Layout>} />
+            <Route path="/forgot-password" element={<Layout><ForgotPasswordPage /></Layout>} />
             <Route path="/investments" element={<Layout><InvestmentOptionsPage /></Layout>} />
             <Route path="/performance" element={<Layout><PerformancePage /></Layout>} />
             <Route path="/terms" element={<Layout><TermsOfServicePage /></Layout>} />

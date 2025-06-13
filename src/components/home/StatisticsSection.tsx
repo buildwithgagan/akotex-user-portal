@@ -6,21 +6,25 @@ const StatisticsSection = () => {
       icon: <img src="/assets/icon1.png" className="h-10 w-10" />,
       value: "$100M+",
       label: "Assets Under Management",
+      image: "/images/exp1.png",
     },
     {
       icon: <img src="/assets/icon2.png" className="h-10 w-10" />,
       value: "10,000+",
       label: "Happy Investors",
+      image: "/images/exp2.png",
     },
     {
       icon: <img src="/assets/icon3.png" className="h-10 w-10" />,
       value: "12.5%",
       label: "Avg. Annual Return",
+      image: "/images/exp3.png",
     },
     {
       icon: <img src="/assets/icon4.png" className="h-10 w-10" />,
       value: "24/7",
       label: "Customer Support",
+      image: "/images/exp4.png",
     },
   ];
 
@@ -57,10 +61,10 @@ const StatisticsSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-0 group-hover:w-32 transition-all duration-300 overflow-hidden">
+                <div className="w-0 group-hover:w-36 transition-all duration-300 overflow-hidden">
                   <div className="w-32 h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg">
                     <img
-                      src="/assets/img1.png"
+                      src={stat.image}
                       alt="Investment background"
                       className="w-full h-full object-cover rounded-lg group-hover:w-[50%] group-hover:absolute group-hover:top-0 group-hover:right-0"
                     />
@@ -89,15 +93,6 @@ const StatisticsSection = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="bg-[#FAFDFF] rounded-2xl p-6 shadow-lg min-h-[300px] flex items-center justify-center">
-              <div className="w-full h-32 sm:h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden">
-                <img
-                  src="/assets/img1.png"
-                  alt="Modern living room interior"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
             <div className="space-y-6">
               {stats.slice(2, 4).map((stat, index) => (
@@ -154,9 +149,9 @@ const StatisticsSection = () => {
                   </div>
                   <div className="w-1/2 bg-gradient-to-br from-gray-800 to-gray-900">
                     <img
-                      src="/assets/img1.png"
+                      src={stat.image}
                       alt="Investment background"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full bg-cover object-cover"
                     />
                   </div>
                 </div>
