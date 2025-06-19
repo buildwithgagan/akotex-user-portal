@@ -143,7 +143,7 @@ const TestimonialsSection = () => {
           }
           
           .animate-slide-left {
-            animation: slide-left ${testimonials.length * 3}s linear infinite;
+            animation: slide-left ${testimonials.length * 6}s linear infinite;
           }
         `,
         }}
