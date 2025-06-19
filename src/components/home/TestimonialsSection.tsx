@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,58 +9,15 @@ import {
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "Financial Advisor",
-    company: "Capital Investments",
-    content:
-      "Akotex Investment has completely transformed how my clients approach investments. The platform's intuitive interface and diverse portfolio options make it easy to recommend.",
-    rating: 5,
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    verified: true,
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Small Business Owner",
-    company: "Tech Innovations",
-    content:
-      "As someone with limited financial experience, I was hesitant to start investing. Akotex made the process simple and transparent. My portfolio has seen consistent growth over the past year.",
-    rating: 5,
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    verified: true,
-  },
-  {
-    id: 3,
-    name: "Olivia Rodriguez",
-    role: "Retired Teacher",
-    company: "",
-    content:
-      "I wanted a secure retirement plan that would give me peace of mind. The customer support team at Akotex guided me through every step, and I couldn't be happier with the results.",
-    rating: 4,
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    verified: true,
-  },
-];
+import { testimonials } from "../mock-data/dummy-data";
+import TestimonialTabs from "../dashboard/Investor";
 
 const TestimonialsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  // Pause auto-scroll on hover
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, i) => (
@@ -75,6 +32,13 @@ const TestimonialsSection = () => {
     ));
   };
 
+  // Create a duplicated array for seamless infinite scroll
+  const duplicatedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
+
   return (
     <section className="px-4 sm:px-6 lg:px-20">
       <div
@@ -86,8 +50,11 @@ const TestimonialsSection = () => {
       >
         <div className="max-w-7xl mx-auto py-12 sm:py-16">
           {/* Section Header */}
-          <div className="flex flex-col lg:flex-row justify-between">
-            <div className="mb-8 sm:mb-12 px-4">
+          <div className="flex flex-col justify-between">
+            <div className="mb-8 lg:mb-12 px-4">
+              <p className="text-akotex-red mb-5 font-extrabold">
+                Success Stories
+              </p>
               <h2 className="text-3xl sm:text-4xl md:text-[52px] font-semibold mb-4 sm:mb-5 font-poppins leading-[1.15] text-black">
                 Hear from Our Investors
               </h2>
@@ -96,53 +63,33 @@ const TestimonialsSection = () => {
                 from our diverse community of investors.
               </p>
             </div>
-            {/* Navigation */}
-            <div className="flex justify-center items-center gap-4 mt-6 sm:mt-8 mb-5 lg:mb-0">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={prevTestimonial}
-                className="group rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black hover:text-black"
-              >
-                <ArrowLeft className="size-5 group-hover:size-6 transition-all duration-300" />
-              </Button>
 
-              {/* Dots Indicator (Commented Out) */}
-              {/* <div className="flex gap-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentIndex ? 'bg-akotex-red scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
-                  />
-                ))}
-              </div> */}
-
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={nextTestimonial}
-                className="group rounded-full size-[50px] sm:size-[71px] border-[1px] border-black bg-[#F9FBFA] hover:bg-[#F9FBFA] hover:border-black hover:text-black"
-              >
-                <ArrowRight className="size-5 group-hover:size-6 transition-all duration-300" />
-              </Button>
+            <div className="mb-8 lg:mb-28 px-4">
+              <TestimonialTabs />
             </div>
           </div>
 
-          {/* Testimonials Container */}
-          <div className="relative px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
-              {[
-                testimonials[currentIndex],
-                testimonials[(currentIndex + 1) % testimonials.length],
-              ].map((testimonial, index) => (
+          {/* Testimonials Container with Horizontal Auto-scroll */}
+          <div
+            className="relative px-4 overflow-hidden"
+            // onMouseEnter={handleMouseEnter}
+            // onMouseLeave={handleMouseLeave}
+          >
+            <div className="pointer-events-none absolute top-0 left-0 h-full w-28 blur-2xl z-10" />
+            <div className="pointer-events-none absolute top-0 right-0 h-full w-28 blur-2xl z-10" />
+
+            <div
+              className={`flex gap-6 sm:gap-8 transition-transform duration-1000 ${
+                isPaused ? "animate-none" : "animate-slide-left"
+              }`}
+              style={{
+                width: `${duplicatedTestimonials.length * 400}px`, // Adjust based on card width
+              }}
+            >
+              {duplicatedTestimonials.map((testimonial, index) => (
                 <Card
-                  key={testimonial.id}
-                  className={`overflow-hidden border-[1px] border-[#D9E2E8] shadow-none hover:shadow-lg transition-all duration-500 bg-white rounded-[20px] backdrop-blur-[4px] ${
-                    index === 1 ? "hidden md:block" : ""
-                  }`}
+                  key={`${testimonial.id}-${index}`}
+                  className="overflow-hidden border-[1px] border-[#D9E2E8] shadow-none hover:shadow-lg transition-all duration-500 bg-white rounded-[20px] backdrop-blur-[4px] max-w-[350px] lg:max-w-2xl flex-shrink-0"
                 >
                   <CardContent className="p-6 sm:p-[60px]">
                     {/* Rating Stars */}
@@ -151,7 +98,7 @@ const TestimonialsSection = () => {
                     </div>
 
                     {/* Testimonial Content */}
-                    <blockquote className="text-sm sm:text-md text-black font-normal font-poppins leading-[2] mb-8 sm:mb-16">
+                    <blockquote className="text-sm sm:text-md text-black font-normal font-poppins leading-[2] mb-8 lg:mb-10">
                       "{testimonial.content}"
                     </blockquote>
 
@@ -163,9 +110,6 @@ const TestimonialsSection = () => {
                           alt={testimonial.name}
                           className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-[5px] object-cover"
                         />
-                        {/* {testimonial.verified && (
-                          <CheckCircle className="absolute -bottom-1 -right-1 h-6 w-6 text-akotex-red bg-white rounded-full" />
-                        )} */}
                       </div>
                       <div className="ml-4 sm:ml-[18px]">
                         <h4 className="font-poppins font-medium text-base sm:text-xl text-black">
@@ -184,6 +128,26 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Add custom CSS for the sliding animation */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes slide-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${testimonials.length * 400}px);
+            }
+          }
+          
+          .animate-slide-left {
+            animation: slide-left ${testimonials.length * 3}s linear infinite;
+          }
+        `,
+        }}
+      />
     </section>
   );
 };

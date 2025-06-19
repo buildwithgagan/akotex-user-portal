@@ -42,7 +42,7 @@ const InvestmentOptionsSection = () => {
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center px-4 lg:px-0">
             {/* Left Side - Text and Mobile Mockup */}
-            <div className="relative">
+            <div className="relative" data-aos="fade-right">
               <div className="mb-6 sm:mb-8">
                 <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
                   <span className="text-xs sm:text-[12px] text-gray font-normal">
@@ -72,7 +72,7 @@ const InvestmentOptionsSection = () => {
             </div>
 
             {/* Right Side - Investment Options */}
-            <div>
+            <div data-aos="fade-left">
               <div className="space-y-6 sm:space-y-8">
                 {investmentOptions.map((option, index) => (
                   <div

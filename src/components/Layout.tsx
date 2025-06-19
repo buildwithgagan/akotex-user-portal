@@ -1,10 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import DashboardSidebar from "./dashboard/DashboardSidebar";
 import FooterSection from "./home/FooterSection";
 import AuthSideView from "./auth/AuthSideView";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,6 +18,14 @@ const Layout = ({ children }: LayoutProps) => {
   const isDashboard = location.pathname.includes("/dashboard");
   const authPaths = ["/login", "/signup", "/forgot-password"];
   const isAuth = authPaths.includes(pathname);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
 
   if (isDashboard) {
     return (

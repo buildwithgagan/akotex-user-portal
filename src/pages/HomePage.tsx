@@ -12,31 +12,31 @@ import CtaSection2 from "@/components/home/CtaSection2";
 const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="animate-fade-in">
+      <div data-aos="fade-up">
         <HeroSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
+      <div data-aos="fade-up" style={{ animationDelay: "100ms" }}>
         <StatisticsSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
+      <div style={{ animationDelay: "200ms" }}>
         <InvestmentOptionsSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
+      <div data-aos="fade-up" style={{ animationDelay: "200ms" }}>
         <CtaSection />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: "300ms" }}>
+      <div style={{ animationDelay: "300ms" }}>
         <WhyChooseUsSection />
       </div>
-      {/* <div className="animate-fade-in" style={{ animationDelay: "350ms" }}>
+      {/* <div data-aos="fade-up" style={{ animationDelay: "350ms" }}>
         <BackedBySection />
       </div> */}
-      <div className="animate-fade-in" style={{ animationDelay: "400ms" }}>
+      <div data-aos="fade-up" style={{ animationDelay: "400ms" }}>
         <TestimonialsSection />
       </div>
-      {/* <div className="animate-fade-in" style={{ animationDelay: "500ms" }}>
+      {/* <div data-aos="fade-up" style={{ animationDelay: "500ms" }}>
         <FaqSection />
       </div> */}
-      <div className="animate-fade-in" style={{ animationDelay: "600ms" }}>
+      <div data-aos="fade-up" style={{ animationDelay: "600ms" }}>
         <CtaSection2 />
       </div>
     </div>

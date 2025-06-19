@@ -34,7 +34,7 @@ const WhyChooseUsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Content */}
-          <div>
+          <div data-aos="fade-right">
             <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
               <span className="text-xs sm:text-[12px] text-gray font-normal">
                 Why Choose Us
@@ -81,7 +81,11 @@ const WhyChooseUsSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="lg:relative" style={{ height: "100%" }}>
+          <div
+            className="lg:relative"
+            style={{ height: "100%" }}
+            data-aos="fade-left"
+          >
             <div className="hidden lg:block lg:absolute bottom-0">
               <div className="lg:relative">
                 {" "}
