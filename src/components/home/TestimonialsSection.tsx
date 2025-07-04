@@ -52,9 +52,11 @@ const TestimonialsSection = () => {
           {/* Section Header */}
           <div className="flex flex-col justify-between">
             <div className="mb-8 lg:mb-12 px-4">
-              <p className="text-akotex-red mb-5 font-extrabold">
-                Success Stories
-              </p>
+              <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
+                <span className="text-md text-akotex-red font-black">
+                  Success Stories
+                </span>
+              </div>
               <h2 className="text-3xl sm:text-4xl md:text-[52px] font-semibold mb-4 sm:mb-5 font-poppins leading-[1.15] text-black">
                 Hear from Our Investors
               </h2>

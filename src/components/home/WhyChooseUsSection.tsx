@@ -36,7 +36,7 @@ const WhyChooseUsSection = () => {
           {/* Left Content */}
           <div data-aos="fade-right">
             <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
-              <span className="text-xs sm:text-[12px] text-gray font-normal">
+              <span className="text-md text-akotex-red font-black">
                 Why Choose Us
               </span>
             </div>

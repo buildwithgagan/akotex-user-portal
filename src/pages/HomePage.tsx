@@ -8,6 +8,8 @@ import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
 import BackedBySection from "@/components/home/BackedBySection";
 import CtaSection2 from "@/components/home/CtaSection2";
+import ScrollingTiersLogos from "@/components/home/ScrollingTiersCards";
+import SectionCarousel from "@/components/nav-components/InvestmentOptionSection";
 
 const HomePage = () => {
   return (
@@ -18,14 +20,20 @@ const HomePage = () => {
       <div data-aos="fade-up" style={{ animationDelay: "100ms" }}>
         <StatisticsSection />
       </div>
-      <div style={{ animationDelay: "200ms" }}>
-        <InvestmentOptionsSection />
+      <div data-aos="fade-up" style={{ animationDelay: "100ms" }}>
+        <SectionCarousel />
       </div>
+      {/* <div style={{ animationDelay: "200ms" }}>
+        <InvestmentOptionsSection />
+      </div> */}
       <div data-aos="fade-up" style={{ animationDelay: "200ms" }}>
         <CtaSection />
       </div>
       <div style={{ animationDelay: "300ms" }}>
         <WhyChooseUsSection />
+      </div>
+      <div data-aos="fade-up" style={{ animationDelay: "300ms" }}>
+        <ScrollingTiersLogos />
       </div>
       {/* <div data-aos="fade-up" style={{ animationDelay: "350ms" }}>
         <BackedBySection />

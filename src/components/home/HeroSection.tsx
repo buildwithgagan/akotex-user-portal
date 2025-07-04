@@ -12,7 +12,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-4 py-1 mb-6">
-              <span className="text-sm text-gray font-medium">
+              <span className="text-md text-akotex-red font-black">
                 Investment made simple
               </span>
             </div>

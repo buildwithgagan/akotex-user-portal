@@ -45,7 +45,7 @@ const InvestmentOptionsSection = () => {
             <div className="relative" data-aos="fade-right">
               <div className="mb-6 sm:mb-8">
                 <div className="inline-block bg-akotex-red/20 border border-akotex-red rounded-lg px-3 py-1 sm:px-4 sm:py-1 mb-4 sm:mb-6">
-                  <span className="text-xs sm:text-[12px] text-gray font-normal">
+                  <span className="text-md text-akotex-red font-black">
                     Investment Options
                   </span>
                 </div>
@@ -88,7 +88,7 @@ const InvestmentOptionsSection = () => {
                         />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-sm sm:text-md font-medium font-poppins text-gray-900">
+                        <h3 className="text-sm md:text-md font-black font-poppins text-gray-900">
                           {option.title}
                         </h3>
                       </div>

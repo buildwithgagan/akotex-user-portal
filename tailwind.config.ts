@@ -81,6 +81,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        scrollX: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-10%)" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -128,6 +132,8 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in-left": "slide-in-left 0.6s ease-out",
         float: "float 3s ease-in-out infinite",
+        "scroll-x": "scrollX 3s linear infinite",
+        "scroll-x-slow": "scrollX 10s linear infinite",
       },
       spacing: {
         "32": "8rem", // 128px for consistent section spacing
